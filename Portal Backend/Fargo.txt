@@ -1,0 +1,10 @@
+
+Ubuntu Installation & Test:
+
+Lib Cups 1.7.2 (default Ubuntu)
+Install Fargo driver (HDP5000_Linux-1.0.0.4-1.tgz)
+	https://www.hidglobal.com/sites/hidglobal.com/files/hdp5000_cups_users_guide_en.pdf
+	http://www.hidglobal.com/drivers
+Installed extra libraries
+	http://ubuntuforums.org/showthread.php?t=2234800
+

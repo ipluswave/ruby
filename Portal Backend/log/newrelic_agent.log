@@ -1,0 +1,188 @@
+# Logfile created on 2017-03-09 06:01:12 +0100 by logger.rb/47272
+[2017-03-09 06:01:12 +0100 ubuntu (120983)] INFO : Starting the New Relic agent in "development" environment.
+[2017-03-09 06:01:12 +0100 ubuntu (120983)] INFO : To prevent agent startup add a NEWRELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[2017-03-09 06:01:12 +0100 ubuntu (120983)] INFO : Reading configuration from config/newrelic.yml (/home/ubuntu/Workspace/IC-Back-End)
+[2017-03-09 06:01:13 +0100 ubuntu (120983)] INFO : New Relic Agent Developer Mode enabled.
+[2017-03-09 06:01:13 +0100 ubuntu (120983)] INFO : Environment: development
+[2017-03-09 06:01:13 +0100 ubuntu (120983)] INFO : No known dispatcher detected.
+[2017-03-09 06:01:13 +0100 ubuntu (120983)] INFO : Application: IC Core System (Development)
+[2017-03-09 06:01:13 +0100 ubuntu (120983)] WARN : Agent configured not to send data in this environment.
+[2017-03-09 06:01:13 +0100 ubuntu (120983)] INFO : Installing middleware-based Excon instrumentation
+[2017-03-09 06:01:13 +0100 ubuntu (120983)] INFO : Installing ActiveRecord 4 instrumentation
+[2017-03-09 06:01:13 +0100 ubuntu (120983)] INFO : Installing DelayedJob instrumentation [part 1/2]
+[2017-03-09 06:01:13 +0100 ubuntu (120983)] INFO : Installing Net instrumentation
+[2017-03-09 06:01:13 +0100 ubuntu (120983)] INFO : Installing deferred Rack::Builder instrumentation
+[2017-03-09 06:01:13 +0100 ubuntu (120983)] INFO : Installing Rack::Builder middleware instrumentation
+[2017-03-09 06:01:13 +0100 ubuntu (120983)] INFO : Installing ActiveJob instrumentation
+[2017-03-09 06:01:13 +0100 ubuntu (120983)] INFO : Installing Rails 3+ middleware instrumentation
+[2017-03-09 06:01:13 +0100 ubuntu (120983)] INFO : Installing Rails 4 Controller instrumentation
+[2017-03-09 06:01:13 +0100 ubuntu (120983)] INFO : Installing Rails 4 Error instrumentation
+[2017-03-09 06:01:13 +0100 ubuntu (120983)] INFO : Installing Rails 4 view instrumentation
+[2017-03-09 06:01:13 +0100 ubuntu (120983)] INFO : Finished instrumentation
+[2017-03-09 06:07:54 +0100 ubuntu (121218)] INFO : Starting the New Relic agent in "development" environment.
+[2017-03-09 06:07:54 +0100 ubuntu (121218)] INFO : To prevent agent startup add a NEWRELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[2017-03-09 06:07:54 +0100 ubuntu (121218)] INFO : Reading configuration from config/newrelic.yml (/home/ubuntu/Workspace/IC-Back-End)
+[2017-03-09 06:07:54 +0100 ubuntu (121218)] INFO : New Relic Agent Developer Mode enabled.
+[2017-03-09 06:07:54 +0100 ubuntu (121218)] INFO : Environment: development
+[2017-03-09 06:07:54 +0100 ubuntu (121218)] INFO : No known dispatcher detected.
+[2017-03-09 06:07:54 +0100 ubuntu (121218)] INFO : Application: IC Core System (Development)
+[2017-03-09 06:07:54 +0100 ubuntu (121218)] WARN : Agent configured not to send data in this environment.
+[2017-03-09 06:07:54 +0100 ubuntu (121218)] INFO : Installing middleware-based Excon instrumentation
+[2017-03-09 06:07:54 +0100 ubuntu (121218)] INFO : Installing ActiveRecord 4 instrumentation
+[2017-03-09 06:07:54 +0100 ubuntu (121218)] INFO : Installing DelayedJob instrumentation [part 1/2]
+[2017-03-09 06:07:54 +0100 ubuntu (121218)] INFO : Installing Net instrumentation
+[2017-03-09 06:07:54 +0100 ubuntu (121218)] INFO : Installing deferred Rack::Builder instrumentation
+[2017-03-09 06:07:54 +0100 ubuntu (121218)] INFO : Installing Rack::Builder middleware instrumentation
+[2017-03-09 06:07:54 +0100 ubuntu (121218)] INFO : Installing ActiveJob instrumentation
+[2017-03-09 06:07:54 +0100 ubuntu (121218)] INFO : Installing Rails 3+ middleware instrumentation
+[2017-03-09 06:07:54 +0100 ubuntu (121218)] INFO : Installing Rails 4 Controller instrumentation
+[2017-03-09 06:07:54 +0100 ubuntu (121218)] INFO : Installing Rails 4 Error instrumentation
+[2017-03-09 06:07:54 +0100 ubuntu (121218)] INFO : Installing Rails 4 view instrumentation
+[2017-03-09 06:07:54 +0100 ubuntu (121218)] INFO : Finished instrumentation
+[2017-03-09 06:07:56 +0100 ubuntu (121218)] INFO : Doing deferred dependency-detection before Rack startup
+[2017-03-09 20:57:42 +0100 ubuntu (25583)] INFO : Starting the New Relic agent in "development" environment.
+[2017-03-09 20:57:42 +0100 ubuntu (25583)] INFO : To prevent agent startup add a NEWRELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[2017-03-09 20:57:42 +0100 ubuntu (25583)] INFO : Reading configuration from config/newrelic.yml (/home/ubuntu/Workspace/IC-Back-End)
+[2017-03-09 20:57:42 +0100 ubuntu (25583)] INFO : New Relic Agent Developer Mode enabled.
+[2017-03-09 20:57:42 +0100 ubuntu (25583)] INFO : Environment: development
+[2017-03-09 20:57:42 +0100 ubuntu (25583)] INFO : No known dispatcher detected.
+[2017-03-09 20:57:42 +0100 ubuntu (25583)] INFO : Application: IC Core System (Development)
+[2017-03-09 20:57:42 +0100 ubuntu (25583)] WARN : Agent configured not to send data in this environment.
+[2017-03-09 20:57:43 +0100 ubuntu (25583)] INFO : Installing middleware-based Excon instrumentation
+[2017-03-09 20:57:43 +0100 ubuntu (25583)] INFO : Installing ActiveRecord 4 instrumentation
+[2017-03-09 20:57:43 +0100 ubuntu (25583)] INFO : Installing DelayedJob instrumentation [part 1/2]
+[2017-03-09 20:57:43 +0100 ubuntu (25583)] INFO : Installing Net instrumentation
+[2017-03-09 20:57:43 +0100 ubuntu (25583)] INFO : Installing deferred Rack::Builder instrumentation
+[2017-03-09 20:57:43 +0100 ubuntu (25583)] INFO : Installing Rack::Builder middleware instrumentation
+[2017-03-09 20:57:43 +0100 ubuntu (25583)] INFO : Installing ActiveJob instrumentation
+[2017-03-09 20:57:43 +0100 ubuntu (25583)] INFO : Installing Rails 3+ middleware instrumentation
+[2017-03-09 20:57:43 +0100 ubuntu (25583)] INFO : Installing Rails 4 Controller instrumentation
+[2017-03-09 20:57:43 +0100 ubuntu (25583)] INFO : Installing Rails 4 Error instrumentation
+[2017-03-09 20:57:43 +0100 ubuntu (25583)] INFO : Installing Rails 4 view instrumentation
+[2017-03-09 20:57:43 +0100 ubuntu (25583)] INFO : Finished instrumentation
+[2017-03-09 20:57:52 +0100 ubuntu (25583)] INFO : Doing deferred dependency-detection before Rack startup
+[2017-03-10 02:28:46 +0100 ubuntu (37452)] INFO : Starting the New Relic agent in "development" environment.
+[2017-03-10 02:28:46 +0100 ubuntu (37452)] INFO : To prevent agent startup add a NEWRELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[2017-03-10 02:28:46 +0100 ubuntu (37452)] INFO : Reading configuration from config/newrelic.yml (/home/ubuntu/Workspace/IC-Back-End)
+[2017-03-10 02:28:46 +0100 ubuntu (37452)] INFO : New Relic Agent Developer Mode enabled.
+[2017-03-10 02:28:46 +0100 ubuntu (37452)] INFO : Environment: development
+[2017-03-10 02:28:46 +0100 ubuntu (37452)] INFO : No known dispatcher detected.
+[2017-03-10 02:28:46 +0100 ubuntu (37452)] INFO : Application: IC Core System (Development)
+[2017-03-10 02:28:46 +0100 ubuntu (37452)] WARN : Agent configured not to send data in this environment.
+[2017-03-10 02:28:46 +0100 ubuntu (37452)] INFO : Installing middleware-based Excon instrumentation
+[2017-03-10 02:28:46 +0100 ubuntu (37452)] INFO : Installing ActiveRecord 4 instrumentation
+[2017-03-10 02:28:46 +0100 ubuntu (37452)] INFO : Installing DelayedJob instrumentation [part 1/2]
+[2017-03-10 02:28:46 +0100 ubuntu (37452)] INFO : Installing Net instrumentation
+[2017-03-10 02:28:46 +0100 ubuntu (37452)] INFO : Installing deferred Rack::Builder instrumentation
+[2017-03-10 02:28:46 +0100 ubuntu (37452)] INFO : Installing Rack::Builder middleware instrumentation
+[2017-03-10 02:28:46 +0100 ubuntu (37452)] INFO : Installing ActiveJob instrumentation
+[2017-03-10 02:28:46 +0100 ubuntu (37452)] INFO : Installing Rails 3+ middleware instrumentation
+[2017-03-10 02:28:46 +0100 ubuntu (37452)] INFO : Installing Rails 4 Controller instrumentation
+[2017-03-10 02:28:46 +0100 ubuntu (37452)] INFO : Installing Rails 4 Error instrumentation
+[2017-03-10 02:28:46 +0100 ubuntu (37452)] INFO : Installing Rails 4 view instrumentation
+[2017-03-10 02:28:46 +0100 ubuntu (37452)] INFO : Finished instrumentation
+[2017-03-10 02:28:52 +0100 ubuntu (37452)] INFO : Doing deferred dependency-detection before Rack startup
+[2017-03-10 03:03:50 +0100 ubuntu (38806)] INFO : Starting the New Relic agent in "development" environment.
+[2017-03-10 03:03:50 +0100 ubuntu (38806)] INFO : To prevent agent startup add a NEWRELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[2017-03-10 03:03:50 +0100 ubuntu (38806)] INFO : Reading configuration from config/newrelic.yml (/home/ubuntu/Workspace/IC-Back-End)
+[2017-03-10 03:03:50 +0100 ubuntu (38806)] INFO : New Relic Agent Developer Mode enabled.
+[2017-03-10 03:03:50 +0100 ubuntu (38806)] INFO : Environment: development
+[2017-03-10 03:03:50 +0100 ubuntu (38806)] INFO : No known dispatcher detected.
+[2017-03-10 03:03:50 +0100 ubuntu (38806)] INFO : Application: IC Core System (Development)
+[2017-03-10 03:03:50 +0100 ubuntu (38806)] WARN : Agent configured not to send data in this environment.
+[2017-03-10 03:03:50 +0100 ubuntu (38806)] INFO : Installing middleware-based Excon instrumentation
+[2017-03-10 03:03:50 +0100 ubuntu (38806)] INFO : Installing ActiveRecord 4 instrumentation
+[2017-03-10 03:03:50 +0100 ubuntu (38806)] INFO : Installing DelayedJob instrumentation [part 1/2]
+[2017-03-10 03:03:50 +0100 ubuntu (38806)] INFO : Installing Net instrumentation
+[2017-03-10 03:03:50 +0100 ubuntu (38806)] INFO : Installing deferred Rack::Builder instrumentation
+[2017-03-10 03:03:50 +0100 ubuntu (38806)] INFO : Installing Rack::Builder middleware instrumentation
+[2017-03-10 03:03:50 +0100 ubuntu (38806)] INFO : Installing ActiveJob instrumentation
+[2017-03-10 03:03:50 +0100 ubuntu (38806)] INFO : Installing Rails 3+ middleware instrumentation
+[2017-03-10 03:03:50 +0100 ubuntu (38806)] INFO : Installing Rails 4 Controller instrumentation
+[2017-03-10 03:03:50 +0100 ubuntu (38806)] INFO : Installing Rails 4 Error instrumentation
+[2017-03-10 03:03:50 +0100 ubuntu (38806)] INFO : Installing Rails 4 view instrumentation
+[2017-03-10 03:03:50 +0100 ubuntu (38806)] INFO : Finished instrumentation
+[2017-03-10 03:03:53 +0100 ubuntu (38806)] INFO : Doing deferred dependency-detection before Rack startup
+[2017-03-11 15:34:43 +0100 ubuntu (40945)] INFO : Starting the New Relic agent in "development" environment.
+[2017-03-11 15:34:43 +0100 ubuntu (40945)] INFO : To prevent agent startup add a NEWRELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[2017-03-11 15:34:43 +0100 ubuntu (40945)] INFO : Reading configuration from config/newrelic.yml (/home/ubuntu/Workspace/IC-Back-End)
+[2017-03-11 15:34:44 +0100 ubuntu (40945)] INFO : New Relic Agent Developer Mode enabled.
+[2017-03-11 15:34:44 +0100 ubuntu (40945)] INFO : Environment: development
+[2017-03-11 15:34:44 +0100 ubuntu (40945)] INFO : No known dispatcher detected.
+[2017-03-11 15:34:44 +0100 ubuntu (40945)] INFO : Application: IC Core System (Development)
+[2017-03-11 15:34:44 +0100 ubuntu (40945)] WARN : Agent configured not to send data in this environment.
+[2017-03-11 15:34:44 +0100 ubuntu (40945)] INFO : Installing middleware-based Excon instrumentation
+[2017-03-11 15:34:44 +0100 ubuntu (40945)] INFO : Installing ActiveRecord 4 instrumentation
+[2017-03-11 15:34:44 +0100 ubuntu (40945)] INFO : Installing DelayedJob instrumentation [part 1/2]
+[2017-03-11 15:34:44 +0100 ubuntu (40945)] INFO : Installing Net instrumentation
+[2017-03-11 15:34:44 +0100 ubuntu (40945)] INFO : Installing deferred Rack::Builder instrumentation
+[2017-03-11 15:34:44 +0100 ubuntu (40945)] INFO : Installing Rack::Builder middleware instrumentation
+[2017-03-11 15:34:44 +0100 ubuntu (40945)] INFO : Installing ActiveJob instrumentation
+[2017-03-11 15:34:44 +0100 ubuntu (40945)] INFO : Installing Rails 3+ middleware instrumentation
+[2017-03-11 15:34:44 +0100 ubuntu (40945)] INFO : Installing Rails 4 Controller instrumentation
+[2017-03-11 15:34:44 +0100 ubuntu (40945)] INFO : Installing Rails 4 Error instrumentation
+[2017-03-11 15:34:44 +0100 ubuntu (40945)] INFO : Installing Rails 4 view instrumentation
+[2017-03-11 15:34:44 +0100 ubuntu (40945)] INFO : Finished instrumentation
+[2017-03-11 15:34:49 +0100 ubuntu (40945)] INFO : Doing deferred dependency-detection before Rack startup
+[2017-03-11 16:16:09 +0100 ubuntu (42362)] INFO : Starting the New Relic agent in "development" environment.
+[2017-03-11 16:16:09 +0100 ubuntu (42362)] INFO : To prevent agent startup add a NEWRELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[2017-03-11 16:16:09 +0100 ubuntu (42362)] INFO : Reading configuration from config/newrelic.yml (/home/ubuntu/Workspace/IC-Back-End)
+[2017-03-11 16:16:09 +0100 ubuntu (42362)] INFO : New Relic Agent Developer Mode enabled.
+[2017-03-11 16:16:09 +0100 ubuntu (42362)] INFO : Environment: development
+[2017-03-11 16:16:09 +0100 ubuntu (42362)] INFO : No known dispatcher detected.
+[2017-03-11 16:16:09 +0100 ubuntu (42362)] INFO : Application: IC Core System (Development)
+[2017-03-11 16:16:09 +0100 ubuntu (42362)] WARN : Agent configured not to send data in this environment.
+[2017-03-11 16:16:09 +0100 ubuntu (42362)] INFO : Installing middleware-based Excon instrumentation
+[2017-03-11 16:16:09 +0100 ubuntu (42362)] INFO : Installing ActiveRecord 4 instrumentation
+[2017-03-11 16:16:09 +0100 ubuntu (42362)] INFO : Installing DelayedJob instrumentation [part 1/2]
+[2017-03-11 16:16:09 +0100 ubuntu (42362)] INFO : Installing Net instrumentation
+[2017-03-11 16:16:09 +0100 ubuntu (42362)] INFO : Installing deferred Rack::Builder instrumentation
+[2017-03-11 16:16:09 +0100 ubuntu (42362)] INFO : Installing Rack::Builder middleware instrumentation
+[2017-03-11 16:16:09 +0100 ubuntu (42362)] INFO : Installing ActiveJob instrumentation
+[2017-03-11 16:16:09 +0100 ubuntu (42362)] INFO : Installing Rails 3+ middleware instrumentation
+[2017-03-11 16:16:09 +0100 ubuntu (42362)] INFO : Installing Rails 4 Controller instrumentation
+[2017-03-11 16:16:09 +0100 ubuntu (42362)] INFO : Installing Rails 4 Error instrumentation
+[2017-03-11 16:16:09 +0100 ubuntu (42362)] INFO : Installing Rails 4 view instrumentation
+[2017-03-11 16:16:09 +0100 ubuntu (42362)] INFO : Finished instrumentation
+[2017-03-12 22:46:51 +0100 ubuntu (76411)] INFO : Starting the New Relic agent in "development" environment.
+[2017-03-12 22:46:51 +0100 ubuntu (76411)] INFO : To prevent agent startup add a NEWRELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[2017-03-12 22:46:51 +0100 ubuntu (76411)] INFO : Reading configuration from config/newrelic.yml (/home/ubuntu/Workspace/IC-Back-End)
+[2017-03-12 22:46:51 +0100 ubuntu (76411)] INFO : New Relic Agent Developer Mode enabled.
+[2017-03-12 22:46:51 +0100 ubuntu (76411)] INFO : Environment: development
+[2017-03-12 22:46:51 +0100 ubuntu (76411)] INFO : No known dispatcher detected.
+[2017-03-12 22:46:51 +0100 ubuntu (76411)] INFO : Application: IC Core System (Development)
+[2017-03-12 22:46:51 +0100 ubuntu (76411)] WARN : Agent configured not to send data in this environment.
+[2017-03-12 22:46:51 +0100 ubuntu (76411)] INFO : Installing middleware-based Excon instrumentation
+[2017-03-12 22:46:51 +0100 ubuntu (76411)] INFO : Installing ActiveRecord 4 instrumentation
+[2017-03-12 22:46:51 +0100 ubuntu (76411)] INFO : Installing DelayedJob instrumentation [part 1/2]
+[2017-03-12 22:46:51 +0100 ubuntu (76411)] INFO : Installing Net instrumentation
+[2017-03-12 22:46:51 +0100 ubuntu (76411)] INFO : Installing deferred Rack::Builder instrumentation
+[2017-03-12 22:46:51 +0100 ubuntu (76411)] INFO : Installing Rack::Builder middleware instrumentation
+[2017-03-12 22:46:51 +0100 ubuntu (76411)] INFO : Installing ActiveJob instrumentation
+[2017-03-12 22:46:52 +0100 ubuntu (76411)] INFO : Installing Rails 3+ middleware instrumentation
+[2017-03-12 22:46:52 +0100 ubuntu (76411)] INFO : Installing Rails 4 Controller instrumentation
+[2017-03-12 22:46:52 +0100 ubuntu (76411)] INFO : Installing Rails 4 Error instrumentation
+[2017-03-12 22:46:52 +0100 ubuntu (76411)] INFO : Installing Rails 4 view instrumentation
+[2017-03-12 22:46:52 +0100 ubuntu (76411)] INFO : Finished instrumentation
+[2017-03-12 22:46:56 +0100 ubuntu (76411)] INFO : Doing deferred dependency-detection before Rack startup
+[2017-03-12 23:15:17 +0100 ubuntu (77746)] INFO : Starting the New Relic agent in "development" environment.
+[2017-03-12 23:15:17 +0100 ubuntu (77746)] INFO : To prevent agent startup add a NEWRELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[2017-03-12 23:15:17 +0100 ubuntu (77746)] INFO : Reading configuration from config/newrelic.yml (/home/ubuntu/Workspace/IC-Back-End)
+[2017-03-12 23:15:17 +0100 ubuntu (77746)] INFO : New Relic Agent Developer Mode enabled.
+[2017-03-12 23:15:17 +0100 ubuntu (77746)] INFO : Environment: development
+[2017-03-12 23:15:17 +0100 ubuntu (77746)] INFO : No known dispatcher detected.
+[2017-03-12 23:15:17 +0100 ubuntu (77746)] INFO : Application: IC Core System (Development)
+[2017-03-12 23:15:17 +0100 ubuntu (77746)] WARN : Agent configured not to send data in this environment.
+[2017-03-12 23:15:18 +0100 ubuntu (77746)] INFO : Installing middleware-based Excon instrumentation
+[2017-03-12 23:15:18 +0100 ubuntu (77746)] INFO : Installing ActiveRecord 4 instrumentation
+[2017-03-12 23:15:18 +0100 ubuntu (77746)] INFO : Installing DelayedJob instrumentation [part 1/2]
+[2017-03-12 23:15:18 +0100 ubuntu (77746)] INFO : Installing Net instrumentation
+[2017-03-12 23:15:18 +0100 ubuntu (77746)] INFO : Installing deferred Rack::Builder instrumentation
+[2017-03-12 23:15:18 +0100 ubuntu (77746)] INFO : Installing Rack::Builder middleware instrumentation
+[2017-03-12 23:15:18 +0100 ubuntu (77746)] INFO : Installing ActiveJob instrumentation
+[2017-03-12 23:15:18 +0100 ubuntu (77746)] INFO : Installing Rails 3+ middleware instrumentation
+[2017-03-12 23:15:18 +0100 ubuntu (77746)] INFO : Installing Rails 4 Controller instrumentation
+[2017-03-12 23:15:18 +0100 ubuntu (77746)] INFO : Installing Rails 4 Error instrumentation
+[2017-03-12 23:15:18 +0100 ubuntu (77746)] INFO : Installing Rails 4 view instrumentation
+[2017-03-12 23:15:18 +0100 ubuntu (77746)] INFO : Finished instrumentation
+[2017-03-12 23:15:20 +0100 ubuntu (77746)] INFO : Doing deferred dependency-detection before Rack startup

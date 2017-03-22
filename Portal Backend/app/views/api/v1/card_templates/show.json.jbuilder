@@ -1,0 +1,1 @@
+json.partial! 'api/v1/card_templates/card_template', card_template: @card_template

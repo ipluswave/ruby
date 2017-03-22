@@ -1,0 +1,56 @@
+<div class="panel">
+  <h3>Letter Template details</h3>
+  <div class="panel-contents">
+    <div class="attributes_table" id="letter_attributes_table">
+      <table border="0" cellspacing="0" cellpadding="0">
+        <tbody>
+          <tr class="row">
+            <th>Id</th>
+            <td><%= @letter_template.id %></td>
+          </tr>
+          <tr class="row">
+            <th>Organization</th>
+            <td><%= @letter_template.organization.name %></td>
+          </tr>
+          <tr class="row">
+            <th>Name</th>
+            <td><%= @letter_template.name %></td>
+          </tr>
+          <tr class="row">
+            <th>Paper type</th>
+            <td><%= @letter_template.paper_type %></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+<style>
+  .wysihtml5-sandbox {
+    padding-top: <%= @letter_template.margin_top %>mm !important;
+    padding-bottom: <%= @letter_template.margin_top %>mm !important;
+    padding-left: <%= @letter_template.margin_left %>mm !important;
+    padding-right: <%= @letter_template.margin_right %>mm !important;
+    width: 215.9mm !important;
+    height: 279.4mm !important;
+  }
+
+  .bootsy_text_area {
+    font-family: '<%= @letter_template.font_family %>' !important;
+    font-size: <%= @letter_template.font_size %>px !important;
+    line-height: <%= @letter_template.line_height %>px !important;
+  }
+</style>
+<%= form_for @letter_template, url: {action: "save_design"}, method: :post do |f| %>
+<div class="panel">
+  <div class="panel-contents">
+    <fieldset class="input">
+      <div class="attributes_table col-md-8" id="letter_design_attributes_table">
+        <%= f.label :template %>
+        <%= f.bootsy_area :template %>
+      </div>
+    </fieldset>
+  </div>
+</div>
+<%= f.submit %>
+<% end %>

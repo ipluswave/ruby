@@ -1,0 +1,50 @@
+<div class="panel_contents">
+  <h4>Important: Replaceable attributes are case sensitive, don't have spaces and should be wrapped in triple curly brackets (aka {{{ }}})</h4>
+  <table border="0" cellspacing="0" cellpadding="0">
+    <thead>
+      <tr>
+        <th class="col col-id">For Address on File</th>
+        <th class="col col-id">For Drop Ship Address</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="odd">
+        <td class="col col-drop-ship">
+          <p>{{{contact.full_name}}}</p>
+          <p>{{{organization.name}}}</p>
+          <p>{{{address1}}}</p>
+          <p>{{{address2}}}</p>
+          <p>{{{city}}}, {{{state}}} {{{zip_code}}}</p>
+        </td>
+        <td class="col col-address-on-file">
+          <p>{{{FullName}}}</p>
+          <p>{{{Add1}}}</p>
+          <p>{{{Add2}}}</p>
+          <p>{{{Add3}}}, {{{Add4}}} {{{PostCode}}}</p>
+        </td>
+      </tr>
+      <tr class="even">
+        <td class="col col-drop-ship">
+          <p>Field description:</p>
+          <p>{{{contact.full_name}}}: Organization Primary Contact Full Name</p>
+          <p>{{{organization.name}}}: Organization Name</p>
+          <p>{{{address1}}}: Address line 1</p>
+          <p>{{{address2}}}: Address line 2</p>
+          <p>{{{city}}}: City</p>
+          <p>{{{state}}}: State</p>
+          <p>{{{zip_code}}}: Zip code</p>
+          <p>{{{country}}}: Country</p>
+        </td>
+        <td class="col col-address-on-file">
+          <p>Field description:</p>
+          <p>{{{FullName}}}: Contact's full name</p>
+          <p>{{{Add1}}}: Address line 1</p>
+          <p>{{{Add2}}}: Address line 2</p>
+          <p>{{{Add3}}}: Address line 3</p>
+          <p>{{{Add4}}}: Address line 4</p>
+          <p>{{{PostCode}}}: Zip code</p>
+        </td>
+      </tr>
+    </tbody>
+  </table>        
+</div>

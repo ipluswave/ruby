@@ -1,0 +1,324 @@
+{
+  "apiVersion": "2.0",
+  "swaggerVersion": "1.2",
+  "basePath": "/",
+  "resourcePath": "users",
+  "apis": [
+    {
+      "path": "api/v2/organizations/{organization_id}/users",
+      "operations": [
+        {
+          "summary": "Fetches all User items",
+          "parameters": [
+            {
+              "paramType": "path",
+              "name": "organization_id",
+              "type": "string",
+              "description": "Organization ID",
+              "required": true
+            },
+            {
+              "paramType": "query",
+              "name": "page",
+              "type": "integer",
+              "description": "Page number",
+              "required": false
+            },
+            {
+              "paramType": "query",
+              "name": "page_size",
+              "type": "integer",
+              "description": "Page size",
+              "required": false
+            }
+          ],
+          "responseMessages": [
+            {
+              "code": 401,
+              "responseModel": null,
+              "message": "Unauthorized"
+            },
+            {
+              "code": 406,
+              "responseModel": null,
+              "message": "Not Acceptable"
+            },
+            {
+              "code": 500,
+              "responseModel": null,
+              "message": "Requested Range Not Satisfiable"
+            }
+          ],
+          "method": "get",
+          "nickname": "Api::V2::Users#index"
+        }
+      ]
+    },
+    {
+      "path": "api/v2/organizations/{organization_id}/users",
+      "operations": [
+        {
+          "summary": "Creates a new User",
+          "parameters": [
+            {
+              "paramType": "path",
+              "name": "organization_id",
+              "type": "string",
+              "description": "Organization ID",
+              "required": true
+            },
+            {
+              "paramType": "form",
+              "name": "user[email]",
+              "type": "string",
+              "description": "Email",
+              "required": true
+            },
+            {
+              "paramType": "form",
+              "name": "user[password]",
+              "type": "string",
+              "description": "Password",
+              "required": true
+            },
+            {
+              "paramType": "form",
+              "name": "user[settings]",
+              "type": "string",
+              "description": "Settings",
+              "required": false
+            }
+          ],
+          "responseMessages": [
+            {
+              "code": 401,
+              "responseModel": null,
+              "message": "Unauthorized"
+            },
+            {
+              "code": 406,
+              "responseModel": null,
+              "message": "Not Acceptable"
+            }
+          ],
+          "method": "post",
+          "nickname": "Api::V2::Users#create"
+        }
+      ]
+    },
+    {
+      "path": "api/v2/organizations/{organization_id}/users/{id}",
+      "operations": [
+        {
+          "summary": "Fetches a single User item",
+          "parameters": [
+            {
+              "paramType": "path",
+              "name": "organization_id",
+              "type": "string",
+              "description": "Organization ID",
+              "required": true
+            },
+            {
+              "paramType": "path",
+              "name": "id",
+              "type": "integer",
+              "description": "User ID",
+              "required": true
+            }
+          ],
+          "responseMessages": [
+            {
+              "code": 401,
+              "responseModel": null,
+              "message": "Unauthorized"
+            },
+            {
+              "code": 404,
+              "responseModel": null,
+              "message": "Not Found"
+            },
+            {
+              "code": 406,
+              "responseModel": null,
+              "message": "Not Acceptable"
+            }
+          ],
+          "method": "get",
+          "nickname": "Api::V2::Users#show"
+        }
+      ]
+    },
+    {
+      "path": "api/v2/organizations/{organization_id}/users/{id}",
+      "operations": [
+        {
+          "summary": "Updates an existing User",
+          "parameters": [
+            {
+              "paramType": "path",
+              "name": "organization_id",
+              "type": "string",
+              "description": "Organization ID",
+              "required": true
+            },
+            {
+              "paramType": "path",
+              "name": "id",
+              "type": "integer",
+              "description": "User ID",
+              "required": true
+            },
+            {
+              "paramType": "form",
+              "name": "user[email]",
+              "type": "string",
+              "description": "Email",
+              "required": false
+            },
+            {
+              "paramType": "form",
+              "name": "user[settings]",
+              "type": "string",
+              "description": "Settings",
+              "required": false
+            }
+          ],
+          "responseMessages": [
+            {
+              "code": 401,
+              "responseModel": null,
+              "message": "Unauthorized"
+            },
+            {
+              "code": 404,
+              "responseModel": null,
+              "message": "Not Found"
+            },
+            {
+              "code": 406,
+              "responseModel": null,
+              "message": "Not Acceptable"
+            }
+          ],
+          "method": "patch",
+          "nickname": "Api::V2::Users#update"
+        }
+      ]
+    },
+    {
+      "path": "api/v2/organizations/{organization_id}/users/{id}",
+      "operations": [
+        {
+          "summary": "Deletes an existing User item",
+          "parameters": [
+            {
+              "paramType": "path",
+              "name": "organization_id",
+              "type": "string",
+              "description": "Organization ID",
+              "required": true
+            },
+            {
+              "paramType": "path",
+              "name": "id",
+              "type": "integer",
+              "description": "User ID",
+              "required": true
+            }
+          ],
+          "responseMessages": [
+            {
+              "code": 401,
+              "responseModel": null,
+              "message": "Unauthorized"
+            },
+            {
+              "code": 404,
+              "responseModel": null,
+              "message": "Not Found"
+            }
+          ],
+          "method": "delete",
+          "nickname": "Api::V2::Users#destroy"
+        }
+      ]
+    },
+    {
+      "path": "api/v2/users/password_reset",
+      "operations": [
+        {
+          "summary": "Reset password",
+          "parameters": [
+            {
+              "paramType": "form",
+              "name": "user[email]",
+              "type": "string",
+              "description": "Email",
+              "required": true
+            }
+          ],
+          "responseMessages": [
+            {
+              "code": 400,
+              "responseModel": null,
+              "message": "Bad Request"
+            },
+            {
+              "code": 404,
+              "responseModel": null,
+              "message": "Not Found"
+            }
+          ],
+          "method": "post",
+          "nickname": "Api::V2::Users#password_reset"
+        }
+      ]
+    },
+    {
+      "path": "api/v2/users/password_new",
+      "operations": [
+        {
+          "summary": "Change password",
+          "parameters": [
+            {
+              "paramType": "form",
+              "name": "user[reset_password_token]",
+              "type": "string",
+              "description": "Email",
+              "required": true
+            },
+            {
+              "paramType": "form",
+              "name": "user[password]",
+              "type": "string",
+              "description": "Email",
+              "required": true
+            },
+            {
+              "paramType": "form",
+              "name": "user[password_confirmation]",
+              "type": "string",
+              "description": "Email",
+              "required": true
+            }
+          ],
+          "responseMessages": [
+            {
+              "code": 400,
+              "responseModel": null,
+              "message": "Bad Request"
+            },
+            {
+              "code": 404,
+              "responseModel": null,
+              "message": "Not Found"
+            }
+          ],
+          "method": "post",
+          "nickname": "Api::V2::Users#password_new"
+        }
+      ]
+    }
+  ]
+}

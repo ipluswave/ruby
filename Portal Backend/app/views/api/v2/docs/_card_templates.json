@@ -1,0 +1,72 @@
+{
+  "apiVersion": "2.0",
+  "swaggerVersion": "1.2",
+  "basePath": "/",
+  "resourcePath": "card_templates",
+  "apis": [
+    {
+      "path": "api/v2/organizations/{organization_id}/card_templates/{id}/fields",
+      "operations": [
+        {
+          "summary": "Return list of variable fields",
+          "parameters": [
+            {
+              "paramType": "path",
+              "name": "organization_id",
+              "type": "string",
+              "description": "Organization ID",
+              "required": true
+            },
+            {
+              "paramType": "path",
+              "name": "id",
+              "type": "integer",
+              "description": "Card Template Id",
+              "required": true
+            }
+          ],
+          "responseMessages": [
+            {
+              "code": 401,
+              "responseModel": null,
+              "message": "Unauthorized"
+            },
+            {
+              "code": 404,
+              "responseModel": null,
+              "message": "Not Found"
+            }
+          ],
+          "method": "get",
+          "nickname": "Api::V2::CardTemplates#fields"
+        }
+      ]
+    },
+    {
+      "path": "api/v2/organizations/{organization_id}/card_templates",
+      "operations": [
+        {
+          "summary": "Fetches all Card Templates items",
+          "parameters": [
+            {
+              "paramType": "path",
+              "name": "organization_id",
+              "type": "string",
+              "description": "Organization ID",
+              "required": true
+            }
+          ],
+          "responseMessages": [
+            {
+              "code": 401,
+              "responseModel": null,
+              "message": "Unauthorized"
+            }
+          ],
+          "method": "get",
+          "nickname": "Api::V2::CardTemplates#index"
+        }
+      ]
+    }
+  ]
+}

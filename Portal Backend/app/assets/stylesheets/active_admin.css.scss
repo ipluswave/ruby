@@ -1,0 +1,166 @@
+// SASS variable overrides must be declared before loading up Active Admin's styles.
+//
+// To view the variables that Active Admin provides, take a look at
+// `app/assets/stylesheets/active_admin/mixins/_variables.css.scss` in the
+// Active Admin source.
+//
+// For example, to change the sidebar width:
+// $sidebar-width: 242px;
+
+// Active Admin's got SASS!
+@import "active_admin/mixins";
+@import "active_admin/base";
+@import "croppic";
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import "bootsy";
+@import "bootstrap-yeti.min";
+
+@import "select2";
+@import "select2-bootstrap";
+
+.select2-container--bootstrap {
+  display: inline-block !important;
+}
+
+// Overriding any non-variable SASS must be done after the fact.
+// For example, to change the default status-tag color:
+//
+//   .status_tag { background: #6090DB; }
+
+.amount {
+  text-align: right;
+}
+
+.label {
+  display: block;
+  text-align: left;
+  padding-left: 0em;
+  font-size: 1.0em;
+  font-weight: bold;
+  color: #5E6469;
+}
+
+.panel {
+  background: #f4f4f4;
+  border-radius: 4px;
+  border: 0px solid transparent;
+  box-shadow: inset 0 1px 4px #ddd;
+  margin-bottom: 20px;
+}
+
+form.filter_form .filter_form_field.select_and_search input[type=text] {
+  width: 45%;
+}
+
+form.filter_form .filter_form_field.filter_date_range input[type=text] {
+  width: 45%;
+  font-size: 0.70em;
+}
+
+.ui-datepicker .ui-datepicker-header {
+  height: 35px;
+  width: 156px;
+}
+
+form fieldset > ol > li fieldset legend {
+  border: 0px;
+}
+
+#index_table_migration_logs .col-migration_task {
+  max-width: 150px;
+}
+
+#index_table_migration_logs .col-organization {
+  max-width: 125px;
+}
+
+#index_table_migration_logs .col-created_at {
+  max-width: 150px !important;
+}
+
+.summary-list {
+  max-height: 150px;
+  overflow: scroll;
+}
+
+.status_tag {
+  &.blue { background: #008cba; }
+  &.yellow { background: #dcd266; }
+}
+
+.column_hightlight_warning { background: #dcd266 !important; }
+
+input.editable_text_column {
+  background-color: #FBFF8C;
+  border: 1px none #FBFF8C;
+  box-shadow: 0 2px 19px #AAAAAA;
+  color: black;
+  display: none;
+  font-family: serif;
+  font-size: 1em;
+  font-style: italic;
+  height: 30px;
+  position: absolute;
+  text-align: center;
+  vertical-align: middle;
+  width: 180px;
+  z-index: 9090;
+}
+
+div.editable_text_column{
+  padding:4px;
+  background-color: #f9fbc2;
+}
+
+#summary-panel {
+  position: fixed;
+  width: 80%;
+  bottom: 0px;
+  
+  h3 {
+    margin-top: 0px;
+    cursor: pointer;
+    
+    &:hover {
+      background-image: linear-gradient(180deg, #fafafa, #ececec);
+    }
+  }
+}
+
+.index, .admin_print_jobs {
+  padding-bottom: 200px;
+}
+
+
+.share-with-others-container .check_boxes fieldset {
+  & > legend {
+    position: static;
+    width: auto;
+    float: left;
+    max-width: 100%;
+    label {
+      position: static;
+      width: 100%;
+      overflow: hidden;
+      line-height: 19px;
+      text-overflow: ellipsis;
+      color: #ff0000;
+    }
+  }
+  & > ol {
+    width: auto;
+    padding: 0;
+    li label {
+      float: left;
+      width: auto;
+      input[type="checkbox"] {
+        margin-top: 5px;
+      }
+    }
+  }
+}
+
+.step-2, .step-3, .step-4, .organization-add-prev, .organization-add-save {
+  display: none;
+}

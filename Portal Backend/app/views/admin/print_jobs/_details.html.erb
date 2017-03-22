@@ -1,0 +1,67 @@
+<% if !print_job.is_sample? and print_job.organization.is_first_print_job?  %>
+<div class="modal fade" id="workstation_warning_modal" role="dialog">
+  <div class="modal-dialog">
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header alert alert-info">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">First print job: <%= print_job.organization.name %></h4>
+      </div>
+      <div class="modal-body">
+        <% if @print_job.organization.is_legacy? %>
+          <p>Organization <span class='badge alert-success'><%= @print_job.organization.name %></span> has been migrated from the legacy system!</p>
+        <% else %>
+          <p><span class='badge alert-success'><%= @print_job.organization.name %></span> is a brand new customer!</p>
+        <% end %>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+  $(document).ready(function() {
+    $("#workstation_warning_modal").modal();
+  });
+</script>
+<% end %>
+
+<div class="panel-contents">
+  <div class="attributes_table" id="attributes_table_print_job">
+    <table border="0" cellspacing="0" cellpadding="0">
+      <tbody><tr class="row">
+        <th>Organization</th>
+        <td><%= @print_job.organization.name %></td>
+      </tr>
+      <tr class="row">
+        <th>Card Template</th>
+        <td><%= @print_job.card_template.name %></td>
+      </tr>
+      <tr class="row">
+        <th>Total Cards</th>
+        <td><%= @print_job.total_cards %></td>
+      </tr>
+      <tr class="row">
+        <th>Number of Copies</th>
+        <td><%= @print_job.number_of_copies %></td>
+      </tr>
+      <tr class="row">
+        <th>Shipping Provider</th>
+        <td><%= @print_job.shipping_provider.present? ? @print_job.shipping_provider.name : 'not provided' %></td>
+      </tr>
+      <tr class="row">
+        <th>Address</th>
+        <td><%= @print_job.address %></td>
+      </tr>
+      <tr class="row">
+        <th>Status</th>
+        <td><%= @print_job.status %></td>
+      </tr>
+      <tr class="row">
+        <th>Status message</th>
+        <td><%= @print_job.status_message %></td>
+      </tr>
+    </tbody></table>
+  </div>
+</div>

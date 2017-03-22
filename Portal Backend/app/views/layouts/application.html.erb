@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>InstantCard</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+
+  <%= render("layouts/analytics") %>
+
+  <script src="/fabric/js/bootstrap.min.js"></script>
+  <script src="/fabric/js/fabric.min.js"></script>
+  <script src="/fabric/js/bootstrap-colorpicker.min.js"></script>
+
+  <link rel="stylesheet" href="/fabric/css/bootstrap-yeti.min.css">
+  <link rel="stylesheet" href="/fabric/css/bootstrap-colorpicker.min.css">
+  <link rel="stylesheet" href="/fabric/css/font-awesome.min.css">
+
+  <link rel="stylesheet" href="/fabric/css/style.css">
+	
+	<link href="/assets/favicon.ico" rel="shortcut icon" />
+</head>
+<body>
+
+<%= yield %>
+
+</body>
+</html>

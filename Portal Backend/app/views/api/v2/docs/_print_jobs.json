@@ -1,0 +1,393 @@
+{
+  "apiVersion": "2.0",
+  "swaggerVersion": "1.2",
+  "basePath": "/",
+  "resourcePath": "print_jobs",
+  "apis": [
+    {
+      "path": "api/v2/organizations/{organization_id}/print_jobs",
+      "operations": [
+        {
+          "summary": "Fetches all Print Jobs items",
+          "parameters": [
+            {
+              "paramType": "path",
+              "name": "organization_id",
+              "type": "string",
+              "description": "Organization ID",
+              "required": true
+            },
+            {
+              "paramType": "query",
+              "name": "page",
+              "type": "integer",
+              "description": "Page number",
+              "required": false
+            },
+            {
+              "paramType": "query",
+              "name": "page_size",
+              "type": "integer",
+              "description": "Page size",
+              "required": false
+            },
+            {
+              "paramType": "query",
+              "name": "status",
+              "type": "string",
+              "description": "Job status (Created: 0, Scheduled: 1)",
+              "required": false
+            }
+          ],
+          "responseMessages": [
+            {
+              "code": 401,
+              "responseModel": null,
+              "message": "Unauthorized"
+            },
+            {
+              "code": 404,
+              "responseModel": null,
+              "message": "Not Found"
+            }
+          ],
+          "method": "get",
+          "nickname": "Api::V2::PrintJobs#index"
+        }
+      ]
+    },
+    {
+      "path": "api/v2/organizations/{organization_id}/print_jobs",
+      "operations": [
+        {
+          "summary": "Create a new Print Job item",
+          "parameters": [
+            {
+              "paramType": "path",
+              "name": "organization_id",
+              "type": "string",
+              "description": "Organization ID",
+              "required": true
+            },
+            {
+              "paramType": "form",
+              "name": "print_job[address_id]",
+              "type": "integer",
+              "description": "Address Id",
+              "required": true
+            },
+            {
+              "paramType": "form",
+              "name": "print_job[shipping_provider_id]",
+              "type": "integer",
+              "description": "Shipping Provider Id",
+              "required": true
+            },
+            {
+              "paramType": "form",
+              "name": "print_job[card_template_id]",
+              "type": "integer",
+              "description": "Card Template id",
+              "required": false
+            }
+          ],
+          "responseMessages": [
+            {
+              "code": 400,
+              "responseModel": null,
+              "message": "Bad Request"
+            },
+            {
+              "code": 401,
+              "responseModel": null,
+              "message": "Unauthorized"
+            }
+          ],
+          "method": "post",
+          "nickname": "Api::V2::PrintJobs#create"
+        }
+      ]
+    },
+    {
+      "path": "api/v2/organizations/{organization_id}/print_jobs/{id}",
+      "operations": [
+        {
+          "summary": "Fetches a single Print Job item",
+          "parameters": [
+            {
+              "paramType": "path",
+              "name": "organization_id",
+              "type": "string",
+              "description": "Organization ID",
+              "required": true
+            },
+            {
+              "paramType": "path",
+              "name": "id",
+              "type": "integer",
+              "description": "Print Job Id",
+              "required": true
+            }
+          ],
+          "responseMessages": [
+            {
+              "code": 401,
+              "responseModel": null,
+              "message": "Unauthorized"
+            },
+            {
+              "code": 404,
+              "responseModel": null,
+              "message": "Not Found"
+            }
+          ],
+          "method": "get",
+          "nickname": "Api::V2::PrintJobs#show"
+        }
+      ]
+    },
+    {
+      "path": "api/v2/organizations/{organization_id}/print_jobs/{id}",
+      "operations": [
+        {
+          "summary": "Update an existing Print Job item",
+          "parameters": [
+            {
+              "paramType": "path",
+              "name": "organization_id",
+              "type": "string",
+              "description": "Organization ID",
+              "required": true
+            },
+            {
+              "paramType": "path",
+              "name": "id",
+              "type": "integer",
+              "description": "Print Job Id",
+              "required": true
+            },
+            {
+              "paramType": "form",
+              "name": "print_job[address_id]",
+              "type": "integer",
+              "description": "Address Id",
+              "required": false
+            },
+            {
+              "paramType": "form",
+              "name": "print_job[shipping_provider_id]",
+              "type": "integer",
+              "description": "Shipping Provider Id",
+              "required": false
+            }
+          ],
+          "responseMessages": [
+            {
+              "code": 400,
+              "responseModel": null,
+              "message": "Bad Request"
+            },
+            {
+              "code": 401,
+              "responseModel": null,
+              "message": "Unauthorized"
+            },
+            {
+              "code": 404,
+              "responseModel": null,
+              "message": "Not Found"
+            }
+          ],
+          "method": "patch",
+          "nickname": "Api::V2::PrintJobs#update"
+        }
+      ]
+    },
+    {
+      "path": "api/v2/organizations/{organization_id}/print_jobs/{id}/add_cards",
+      "operations": [
+        {
+          "summary": "Add cards to the Print Job item",
+          "parameters": [
+            {
+              "paramType": "path",
+              "name": "organization_id",
+              "type": "string",
+              "description": "Organization ID",
+              "required": true
+            },
+            {
+              "paramType": "path",
+              "name": "id",
+              "type": "integer",
+              "description": "Print Job Id",
+              "required": true
+            },
+            {
+              "paramType": "form",
+              "name": "print_job[card_ids]",
+              "type": "string",
+              "description": "Card Id's",
+              "required": true
+            }
+          ],
+          "responseMessages": [
+            {
+              "code": 400,
+              "responseModel": null,
+              "message": "Bad Request"
+            },
+            {
+              "code": 401,
+              "responseModel": null,
+              "message": "Unauthorized"
+            },
+            {
+              "code": 404,
+              "responseModel": null,
+              "message": "Not Found"
+            }
+          ],
+          "method": "post",
+          "nickname": "Api::V2::PrintJobs#add_cards"
+        }
+      ]
+    },
+    {
+      "path": "api/v2/organizations/{organization_id}/print_jobs/{id}/remove_cards/{card_id}",
+      "operations": [
+        {
+          "summary": "Remove a card from the Print Job item",
+          "parameters": [
+            {
+              "paramType": "path",
+              "name": "organization_id",
+              "type": "string",
+              "description": "Organization ID",
+              "required": true
+            },
+            {
+              "paramType": "path",
+              "name": "id",
+              "type": "integer",
+              "description": "Print Job Id",
+              "required": true
+            },
+            {
+              "paramType": "path",
+              "name": "card_id",
+              "type": "integer",
+              "description": "Card Id",
+              "required": true
+            }
+          ],
+          "responseMessages": [
+            {
+              "code": 401,
+              "responseModel": null,
+              "message": "Unauthorized"
+            },
+            {
+              "code": 404,
+              "responseModel": null,
+              "message": "Not Found"
+            },
+            {
+              "code": 500,
+              "responseModel": null,
+              "message": "Internal Server Error"
+            }
+          ],
+          "method": "delete",
+          "nickname": "Api::V2::PrintJobs#remove_cards"
+        }
+      ]
+    },
+    {
+      "path": "api/v2/organizations/{organization_id}/print_jobs/{id}/print",
+      "operations": [
+        {
+          "summary": "Submit Print Job",
+          "parameters": [
+            {
+              "paramType": "path",
+              "name": "organization_id",
+              "type": "string",
+              "description": "Organization ID",
+              "required": true
+            },
+            {
+              "paramType": "path",
+              "name": "id",
+              "type": "integer",
+              "description": "Print Job Id",
+              "required": true
+            }
+          ],
+          "responseMessages": [
+            {
+              "code": 400,
+              "responseModel": null,
+              "message": "Bad Request"
+            },
+            {
+              "code": 401,
+              "responseModel": null,
+              "message": "Unauthorized"
+            },
+            {
+              "code": 404,
+              "responseModel": null,
+              "message": "Not Found"
+            }
+          ],
+          "method": "post",
+          "nickname": "Api::V2::PrintJobs#print"
+        }
+      ]
+    },
+    {
+      "path": "api/v2/organizations/{organization_id}/print_jobs/{id}/check_balance",
+      "operations": [
+        {
+          "summary": "Submit Print Job",
+          "parameters": [
+            {
+              "paramType": "path",
+              "name": "organization_id",
+              "type": "string",
+              "description": "Organization ID",
+              "required": true
+            },
+            {
+              "paramType": "path",
+              "name": "id",
+              "type": "integer",
+              "description": "Print Job Id",
+              "required": true
+            }
+          ],
+          "responseMessages": [
+            {
+              "code": 400,
+              "responseModel": null,
+              "message": "Bad Request"
+            },
+            {
+              "code": 401,
+              "responseModel": null,
+              "message": "Unauthorized"
+            },
+            {
+              "code": 404,
+              "responseModel": null,
+              "message": "Not Found"
+            }
+          ],
+          "method": "get",
+          "nickname": "Api::V2::PrintJobs#check_balance"
+        }
+      ]
+    }
+  ]
+}

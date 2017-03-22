@@ -1,0 +1,285 @@
+<script src="/fabric/js/croppic.min.js"></script>
+<script src="/fabric/js/fabric.js"></script>
+<script src="/fabric/js/fabric.extensions.js"></script>
+<script src="/fabric/js/jquery.fontavailable-1.1.min.js"></script>
+
+<%= javascript_tag "var front_card_fonts = #{@card_template.used_fonts('front').to_json}" %>
+<%= javascript_tag "var back_card_fonts = #{@card_template.used_fonts('back').to_json}" %>
+<div class="panel">
+  <h3>Card Template details</h3>
+  <div class="panel-contents">
+    <div class="attributes_table" id="attributes_table_print_job">
+      <table border="0" cellspacing="0" cellpadding="0">
+        <tbody>
+          <tr class="row">
+            <th>Id</th>
+            <td><%= @card_template.id %></td>
+          </tr>
+          <tr class="row">
+            <th>Name</th>
+            <td><%= link_to(@card_template.name, admin_card_template_path(@card_template), :class => "member_link") %></td>
+          </tr>
+          <tr class="row">
+            <th>Organization</th>
+            <td><%= link_to(@card_template.organization.name, admin_organization_path(@card_template.organization), :class => "member_link") %></td>
+          </tr>
+          <tr class="row">
+            <th>Card Type</th>
+            <td><%= @card_template.card_type.name %></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+<%= javascript_tag "var preview_json = #{@card_template.preview_data.data.to_json}" %>
+<%= form_for @card_template, url: {action: "save_card_preview_data"}, method: :post do |f| %>
+<div class="panel">
+  <h3>Replaceable attributes</h3>
+  <div class="panel_contents">
+    <fieldset class="input">
+      <table border="0" cellspacing="0" cellpadding="0">
+        <tbody>
+          <% index = 0 %>
+          <% @card_template.template_fields.each do |tf| %>
+          <% next if (tf["token"].blank? or tf['type'].eql?"placeholder") or tf['type'].eql?"concatenated" %>
+          <tr id="tfield_<%= index %>" class="row">
+            <td id="tfield_token_<%= index %>" class="col col-sel"><%= CardTemplate.template_fields_label(tf)  %></td>
+            <td class="col col-id">
+              <% case tf['type'] %>
+              <% when 'image' %>
+                <div id="tfield_value_<%= index %>" name="user_data[<%= tf['token']%>]" style="width:<%= tf['dimensions']['width']*2*1.4 %>px;height:<%= tf['dimensions']['height']*2*1.4 %>px;position: relative; border:1px solid #ccc;margin: 30px;"></div>
+                <script>
+                  var cropperOptions = {
+                    uploadUrl:'<%= upload_admin_card_template_path(@card_template) %>',
+            				cropUrl:'<%= crop_admin_card_template_path(@card_template) %>', 
+                    loadPicture: preview_json["<%= tf['token']%>"] || '',
+                    loaderHtml:'<div class="loader bubblingG"><span id="bubblingG_1"></span><span id="bubblingG_2"></span><span id="bubblingG_3"></span></div> ',
+                    uploadData:{
+                      card_template_id: <%= @card_template.id %>,
+                      token: "<%= tf['token'] %>"
+                    },
+                    cropData:{
+                      card_template_id: <%= @card_template.id %>,
+                      token: "<%= tf['token'] %>"
+              			},
+                    onReset:		function(){ 
+                      cropperOptions.loadPicture = '';
+                      cropperHeader.destroy();
+                      cropperHeader = new Croppic(id_div, cropperOptions);
+                    }
+              		};
+                  var id_div = 'tfield_value_<%= index %>';
+                  var cropperHeader = new Croppic(id_div, cropperOptions);
+                </script>
+                <!-- <input id="tfield_value_<%= index %>" name="user_data[<%= tf['token']%>]" type="text" value="<%= @card_template.preview_data.data[tf["token"]] %>"/> -->
+              <% when 'calculated_date' %>
+                This is a calculated date field
+              <% else %>
+                <input id="tfield_value_<%= index %>" name="user_data[<%= tf['token']%>]" type="text" value="<%= @card_template.preview_data.data[tf["token"]] %>"/>
+              <% end %>
+            </td>
+
+          </tr>
+          <% index += 1 %>
+          <% end %>
+          <script>var total_fields = <%= index %>;</script>
+        </tbody>
+      </table>
+    </fieldset>
+    <fieldset class="actions">
+      <%= f.submit("Save card preview data") %>
+    </fieldset>
+  </div>
+</div>
+<% end %>
+<%= javascript_tag "var front_card_template_json = #{@card_template.image(@user_data_id, "front").to_json}" %>
+<%= javascript_tag "var back_card_template_json = #{@card_template.image(@user_data_id, "back").to_json}" %>
+
+<div class="panel">
+  <h3>Preview</h3>
+  <div class="panel_contents">
+    <fieldset class="input">
+      <%= form_for @card_template, url: {action: "print_sample"}, method: :post do |f| %>
+      <table border="0" cellspacing="0" cellpadding="0">
+        <thead>
+          <tr>
+            <th class="col col-id">Front Side</th>
+						<% if @card_template.double_sided? %>
+            	<th class="col col-id">Back Side</th>
+						<% end %>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="col col-front" id="div-front"><%= image_tag asset_url("spinner.gif"), alt: "Loading", id: "spin-front" %><img id="img-front" style="width:<%= @card_template.width %>px;"></img></td>
+						<% if @card_template.double_sided? %>
+            	<td class="col col-back" id="div-back"><%= image_tag asset_url("spinner.gif"), alt: "Loading", id: "spin-back" %><img id="img-back" style="width:<%= @card_template.width %>px;"></img></td>
+						<% end %>
+          </tr>
+          <tr>
+            <td class="col"><%= f.submit("Print sample") %></td>
+          </tr>
+        </tbody>
+      </table>
+      <% end %>
+    </fieldset>
+  </div>
+</div>
+<div style="display:none"><canvas id="front"></canvas></div>
+<div style="display:none"><canvas id="back"></canvas></div>
+
+<% if @front_preview_legacy_image.present? %>
+<div class="panel">
+  <h3>Legacy Card Preview (realtime)</h3>
+  <div class="panel_contents">
+    <fieldset class="input">
+      <table border="0" cellspacing="0" cellpadding="0">
+        <thead>
+          <tr>
+            <th class="col col-id">Front Side</th>
+						<% if @card_template.double_sided? %>
+            	<th class="col col-id">Back Side</th>
+						<% end %>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="col col-front" id="div-front"><img id="img-legacy-front" style="width:<%= @card_template.width %>px;" src="data:image/png;base64,<%= @front_preview_legacy_image %>"></img></td>
+						<% if @card_template.double_sided? %>
+            	<td class="col col-back" id="div-back"><img id="img-lebacy-back" style="width:<%= @card_template.width %>px;" src="data:image/png;base64,<%= @back_preview_legacy_image %>"></img></td>
+						<% end %>
+          </tr>
+        </tbody>
+      </table>
+    </fieldset>
+  </div>
+</div>
+<% end %>
+
+<div class="panel">
+  <h3>Legacy Card Preview (backup)</h3>
+  <div class="panel_contents">
+    <fieldset class="input">
+      <table border="0" cellspacing="0" cellpadding="0">
+        <thead>
+          <tr>
+            <th class="col col-id">Front Side</th>
+						<% if @card_template.double_sided? %>
+            	<th class="col col-id">Back Side</th>
+						<% end %>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="col col-front" id="div-front"><img id="img-bkp-legacy-front" style="width:<%= @card_template.width %>px;" src="https://s3-us-west-2.amazonaws.com/instantcard-core/legacy_preview/<%= @card_template.id %>-front.jpg"></img></td>
+						<% if @card_template.double_sided? %>
+            	<td class="col col-back" id="div-back"><img id="img-bkp-lebacy-back" style="width:<%= @card_template.width %>px;" src="https://s3-us-west-2.amazonaws.com/instantcard-core/legacy_preview/<%= @card_template.id %>-back.jpg"></img></td>
+						<% end %>
+          </tr>
+        </tbody>
+      </table>
+    </fieldset>
+  </div>
+</div>
+
+<div class="panel">
+  <h3>Preview error</h3>
+  <div class="panel_contents">
+    <fieldset class="input">
+      <table border="0" cellspacing="0" cellpadding="0">
+        <thead>
+          <tr>
+            <th class="col col-id">Front Side</th>
+						<% if @card_template.double_sided? %>
+            	<th class="col col-id">Back Side</th>
+						<% end %>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="col col-front" id="div-front"><a target="blank" href="https://s3-us-west-2.amazonaws.com/instantcard-core/legacy_preview/<%= @card_template.id %>-front-error.txt">Link to front side error message text file</a></td>
+						<% if @card_template.double_sided? %>
+            	<td class="col col-back" id="div-back"><a target="blank" href="https://s3-us-west-2.amazonaws.com/instantcard-core/legacy_preview/<%= @card_template.id %>-back-error.txt">Link to back side error message text file</a></td>
+						<% end %>
+          </tr>
+        </tbody>
+      </table>
+    </fieldset>
+  </div>
+</div>
+
+<% if @card_fields_items.present? %>
+<div class="panel">
+  <h3>Compare replaceable attributes:</h3>
+  <div class="panel_contents">
+    <fieldset class="input">
+      <table border="0" cellspacing="0" cellpadding="0">
+        <tr><td><b>New system</b></td><td><%= @card_template.template_fields.select{ |tf| (tf['label'] ? tf['label'] : tf['token']) unless tf['type'].eql?'placeholder' }.map{ |tf| tf['label'] ? tf['label'] : tf['token'] }.join(", ") %></td></tr>
+        <tr><td>&nbsp;</td></tr>
+        <tr><td><b>Legacy</b></td><td><%= @card_fields_items.join(", ") %></td></tr>
+        <tr><td>&nbsp;</td></tr>
+      </table>
+    </fieldset>
+  </div>
+</div>
+<% end %>
+
+<script>
+updateFonts(front_card_fonts);
+updateFonts(back_card_fonts);
+
+var front_canvas, back_canvas;
+function showCanvas(canvas, side, isPreview) {
+  // canvas.renderAll();
+  var imageMultiplier = <%= @card_template.image_multiplier %>;
+  var imageQuality = <%= @card_template.image_quality %>;
+  $("#img-"+side).attr("src", canvas.toDataURLWithMultiplier('jpg', imageMultiplier, imageQuality));
+  $("#spin-"+side).hide();
+  $("#div-"+side).show();
+}
+
+function loadCanvas(side, canvas_json) {
+  if( canvas_json == "" )
+  {
+    $("#spin-"+side).hide();
+    $("#div-back").append('<p>JSON specification is empty. Check double sided option in Studio.</p>');
+    $("#div-"+side).show();
+    return;
+  }
+    
+  var canvasWidth = <%= @card_template.width + 1 %>
+  var canvasHeight = <%= @card_template.height + 1 %>;
+  var canvas = new fabric.Canvas(side);
+  
+  canvas.setHeight(canvasHeight);
+  canvas.setWidth(canvasWidth);
+
+  canvas.on('object:added', function(options){
+      onObjectAdded(options);
+  });
+
+  var json = JSON.parse(canvas_json);
+  var templateToLoad = prepareTemplateForLoading(json);
+  canvas.loadFromJSON(templateToLoad);
+  setTimeout(function(){
+    // canvas.renderAll();
+    // updateAlignOfAllObjects(canvas);
+    // resizeAllTextObjects(canvas);
+    if( canvas.backgroundImage != null ) {
+      canvas.backgroundImage.stroke = '#bbb';
+    }
+    showSlotPunchMagStripe(canvas, true);
+    showCanvas(canvas, side, true);
+  }, 2000);
+  
+  return canvas;
+}
+
+$(document).ready(function() {
+  front_canvas = loadCanvas('front', front_card_template_json);
+	<% if @card_template.double_sided? %>
+    back_canvas = loadCanvas('back', back_card_template_json);
+	<% end %>
+});
+</script>

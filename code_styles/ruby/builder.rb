@@ -21,10 +21,12 @@ class Reports::Builder
       conditions = request["where"] || {}
       conditions.each { |k,v| conditions[k] = range_from(v) if is_range?(v) }
       active_record.where(conditions)
+
       if request["extra"]
         raise Reports::Exception, "Method \"#{request['extra']}\" not found" unless active_record.respond_to? request['extra']
         active_record.send(request['extra'])
       end
+
       active_record.group(filter["model"])
       if request['aggregate']
         request['field'] ||= 'id'
@@ -32,6 +34,7 @@ class Reports::Builder
       else
         request_data = active_record.send(request['field'])
       end
+
       ids.each_with_index do |id, row|
         @result[row][column] = process(request_data[id])
       end
@@ -61,35 +64,3 @@ class Reports::Builder
     value['startDate'].to_datetime..value['endDate'].to_datetime.end_of_day
   end
 end
-
-# Example Filter
-# {
-#   "model" => "dealer_account",
-#   "requests" => [
-#     {
-#       "model" => "vs_order",
-#       "field" => "total_cost",
-#       "aggregate" => "maximum",
-#       "where" => {
-#         "closed_at" => {
-#           "startDate" => "01.01.2016",
-#           "endDate" => "01.03.2016"
-#         }
-#       }
-#     },
-#     {
-#       "model" => "vs_order",
-#       "field" => "total_cost",
-#       "aggregate" => "count",
-#       "where" => {
-#         "closed_at" => {
-#           "startDate" => "01.01.2016",
-#           "endDate" => "01.03.2016"
-#         }
-#       }
-#     },
-#     {
-#       "field" => "zone_title",
-#     }
-#   ]
-# }

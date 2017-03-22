@@ -1,0 +1,37 @@
+{
+  "apiVersion": "2.0",
+  "swaggerVersion": "1.2",
+  "basePath": "/",
+  "resourcePath": "profile",
+  "apis": [
+    {
+      "path": "api/v2/profile/me",
+      "operations": [
+        {
+          "summary": "Fetches authenticated User profile",
+          "parameters": [
+          ],
+          "responseMessages": [
+            {
+              "code": 401,
+              "responseModel": null,
+              "message": "Unauthorized"
+            },
+            {
+              "code": 406,
+              "responseModel": null,
+              "message": "Not Acceptable"
+            },
+            {
+              "code": 500,
+              "responseModel": null,
+              "message": "Requested Range Not Satisfiable"
+            }
+          ],
+          "method": "get",
+          "nickname": "Api::V2::Users#me"
+        }
+      ]
+    }
+  ]
+}

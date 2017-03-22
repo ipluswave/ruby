@@ -1,0 +1,45 @@
+<div class="panel">
+  <h3>Label Template details</h3>
+  <div class="panel-contents">
+    <div class="attributes_table" id="label_attributes_table">
+      <table border="0" cellspacing="0" cellpadding="0">
+        <tbody>
+          <tr class="row">
+            <th>Id</th>
+            <td><%= @label_template.id %></td>
+          </tr>
+          <tr class="row">
+            <th>Organization</th>
+            <td><%= @label_template.organization.present? ? @label_template.organization.name : '' %></td>
+          </tr>
+          <tr class="row">
+            <th>Type</th>
+            <td><%= @label_template.type %></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+<div class="panel">
+<%= form_for @label_template, url: {action: "save_design"}, method: :post do |f| %>
+  <div class="panel-contents">
+    <fieldset class="input">
+      <div class="attributes_table col-md-8" style="width: 750px;" id="label_design_template_attributes_table">
+        <%= f.label 'From Address' %>
+        <%= f.bootsy_area :template, rows: 5 %>
+      </div>
+      <div class="attributes_table col-md-8" style="width: 750px;" id="label_design_to_address_attributes_table">
+        <%= f.label 'To Address' %>
+        <%= f.bootsy_area :to_address, rows: 10 %>
+      </div>
+      <div class="attributes_table col-md-8">
+        <%= f.submit %>
+      </div>
+    </fieldset>
+  </div>
+<% end %>
+</div>
+<div class="panel">
+  <%= render partial: "template_examples" %>
+</div>

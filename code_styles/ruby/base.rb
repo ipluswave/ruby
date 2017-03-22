@@ -21,6 +21,7 @@ class Reports::Data::Base
 
   def method_missing(method_sym, *arguments, &block)
     attribute_name = method_sym.to_s
+    
     if @records.attribute_names.include? attribute_name
       @records.map{ |x| [x.id, x[attribute_name]]}.to_h
     else

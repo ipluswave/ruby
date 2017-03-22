@@ -1,0 +1,43 @@
+{
+  "apiVersion": "2.0",
+  "swaggerVersion": "1.2",
+  "basePath": "/",
+  "apis": [
+    {
+      "path": "api/v2/docs/profile.{format}",
+      "description": "Profile"
+    },
+    {
+      "path": "api/v2/docs/organizations.{format}",
+      "description": "Organizations"
+    },
+    {
+      "path": "api/v2/docs/addresses.{format}",
+      "description": "Addresses"
+    },
+    {
+      "path": "api/v2/docs/contacts.{format}",
+      "description": "Contacts"
+    },
+    {
+      "path": "api/v2/docs/users.{format}",
+      "description": "Users"
+    },
+    {
+      "path": "api/v2/docs/card_templates.{format}",
+      "description": "Card Templates"
+    },
+    {
+      "path": "api/v2/docs/cards.{format}",
+      "description": "Cards"
+    },
+    {
+      "path": "api/v2/docs/print_jobs.{format}",
+      "description": "PrintJobs"
+    }
+  ],
+  "info": {
+    "title": "Swagger InstantCard",
+    "description": "InstantCard JSON/REST API version 2.0."
+  }
+}

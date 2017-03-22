@@ -1,0 +1,144 @@
+{
+  "apiVersion": "2.0",
+  "swaggerVersion": "1.2",
+  "basePath": "/",
+  "resourcePath": "organizations",
+  "apis": [
+    {
+      "path": "api/v2/organizations/{id}",
+      "operations": [
+        {
+          "summary": "Fetches a single Organization item",
+          "parameters": [
+            {
+              "paramType": "path",
+              "name": "id",
+              "type": "integer",
+              "description": "Organization ID",
+              "required": true
+            }
+          ],
+          "responseMessages": [
+            {
+              "code": 401,
+              "responseModel": null,
+              "message": "Unauthorized"
+            },
+            {
+              "code": 404,
+              "responseModel": null,
+              "message": "Not Found"
+            }
+          ],
+          "method": "get",
+          "nickname": "Api::V2::Organizations#show"
+        }
+      ]
+    },
+    {
+      "path": "api/v2/organizations/{id}",
+      "operations": [
+        {
+          "summary": "Updates an existing Organization",
+          "parameters": [
+            {
+              "paramType": "path",
+              "name": "id",
+              "type": "integer",
+              "description": "Organization ID",
+              "required": true
+            },
+            {
+              "paramType": "form",
+              "name": "organization[settings]",
+              "type": "string",
+              "description": "Settings",
+              "required": false
+            }
+          ],
+          "responseMessages": [
+            {
+              "code": 400,
+              "responseModel": null,
+              "message": "Bad Request"
+            },
+            {
+              "code": 401,
+              "responseModel": null,
+              "message": "Unauthorized"
+            },
+            {
+              "code": 404,
+              "responseModel": null,
+              "message": "Not Found"
+            }
+          ],
+          "method": "patch",
+          "nickname": "Api::V2::Organizations#update"
+        }
+      ]
+    },
+    {
+      "path": "api/v2/organizations/{id}/balance",
+      "operations": [
+        {
+          "summary": "Get Organization balance",
+          "parameters": [
+            {
+              "paramType": "path",
+              "name": "id",
+              "type": "integer",
+              "description": "Organization ID",
+              "required": true
+            }
+          ],
+          "responseMessages": [
+            {
+              "code": 401,
+              "responseModel": null,
+              "message": "Unauthorized"
+            },
+            {
+              "code": 404,
+              "responseModel": null,
+              "message": "Not Found"
+            }
+          ],
+          "method": "get",
+          "nickname": "Api::V2::Organizations#balance"
+        }
+      ]
+    },
+    {
+      "path": "api/v2/organizations/{id}/shipping_providers",
+      "operations": [
+        {
+          "summary": "Get list of available Shipping Provider",
+          "parameters": [
+            {
+              "paramType": "path",
+              "name": "id",
+              "type": "integer",
+              "description": "Organization ID",
+              "required": true
+            }
+          ],
+          "responseMessages": [
+            {
+              "code": 401,
+              "responseModel": null,
+              "message": "Unauthorized"
+            },
+            {
+              "code": 404,
+              "responseModel": null,
+              "message": "Not Found"
+            }
+          ],
+          "method": "get",
+          "nickname": "Api::V2::Organizations#shipping_providers"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,321 @@
+{
+  "apiVersion": "2.0",
+  "swaggerVersion": "1.2",
+  "basePath": "/",
+  "resourcePath": "cards",
+  "apis": [
+    {
+      "path": "api/v2/organizations/{organization_id}/cards",
+      "operations": [
+        {
+          "summary": "Fetches all Card items",
+          "parameters": [
+            {
+              "paramType": "path",
+              "name": "organization_id",
+              "type": "string",
+              "description": "Organization ID",
+              "required": true
+            },
+            {
+              "paramType": "query",
+              "name": "page",
+              "type": "integer",
+              "description": "Page number",
+              "required": false
+            },
+            {
+              "paramType": "query",
+              "name": "page_size",
+              "type": "integer",
+              "description": "Page size",
+              "required": false
+            }
+          ],
+          "responseMessages": [
+            {
+              "code": 401,
+              "responseModel": null,
+              "message": "Unauthorized"
+            }
+          ],
+          "method": "get",
+          "nickname": "Api::V2::Cards#index"
+        }
+      ]
+    },
+    {
+      "path": "api/v2/organizations/{organization_id}/cards",
+      "operations": [
+        {
+          "summary": "Create a new Card Template item",
+          "parameters": [
+            {
+              "paramType": "path",
+              "name": "organization_id",
+              "type": "string",
+              "description": "Organization ID",
+              "required": true
+            },
+            {
+              "paramType": "form",
+              "name": "card[card_template_id]",
+              "type": "integer",
+              "description": "Card Template Id",
+              "required": true
+            },
+            {
+              "paramType": "form",
+              "name": "card[data]",
+              "type": "string",
+              "description": "Data",
+              "required": true
+            }
+          ],
+          "responseMessages": [
+            {
+              "code": 400,
+              "responseModel": null,
+              "message": "Bad Request"
+            },
+            {
+              "code": 401,
+              "responseModel": null,
+              "message": "Unauthorized"
+            }
+          ],
+          "method": "post",
+          "nickname": "Api::V2::Cards#create"
+        }
+      ]
+    },
+    {
+      "path": "api/v2/organizations/{organization_id}/cards/{id}",
+      "operations": [
+        {
+          "summary": "Fetches a single Card Template item",
+          "parameters": [
+            {
+              "paramType": "path",
+              "name": "organization_id",
+              "type": "string",
+              "description": "Organization ID",
+              "required": true
+            },
+            {
+              "paramType": "path",
+              "name": "id",
+              "type": "integer",
+              "description": "Card Id",
+              "required": true
+            }
+          ],
+          "responseMessages": [
+            {
+              "code": 401,
+              "responseModel": null,
+              "message": "Unauthorized"
+            },
+            {
+              "code": 404,
+              "responseModel": null,
+              "message": "Not Found"
+            }
+          ],
+          "method": "get",
+          "nickname": "Api::V2::Cards#show"
+        }
+      ]
+    },
+    {
+      "path": "api/v2/organizations/{organization_id}/cards/{id}",
+      "operations": [
+        {
+          "summary": "Update an existing Card Template item",
+          "parameters": [
+            {
+              "paramType": "path",
+              "name": "organization_id",
+              "type": "string",
+              "description": "Organization ID",
+              "required": true
+            },
+            {
+              "paramType": "path",
+              "name": "id",
+              "type": "integer",
+              "description": "Card Id",
+              "required": true
+            },
+            {
+              "paramType": "form",
+              "name": "card[card_template_id]",
+              "type": "integer",
+              "description": "Card Template Id",
+              "required": false
+            },
+            {
+              "paramType": "form",
+              "name": "card[data]",
+              "type": "string",
+              "description": "Data",
+              "required": false
+            }
+          ],
+          "responseMessages": [
+            {
+              "code": 400,
+              "responseModel": null,
+              "message": "Bad Request"
+            },
+            {
+              "code": 401,
+              "responseModel": null,
+              "message": "Unauthorized"
+            },
+            {
+              "code": 404,
+              "responseModel": null,
+              "message": "Not Found"
+            }
+          ],
+          "method": "patch",
+          "nickname": "Api::V2::Cards#update"
+        }
+      ]
+    },
+    {
+      "path": "api/v2/organizations/{organization_id}/cards/{id}",
+      "operations": [
+        {
+          "summary": "Deletes an existing Card Template item",
+          "parameters": [
+            {
+              "paramType": "path",
+              "name": "organization_id",
+              "type": "string",
+              "description": "Organization ID",
+              "required": true
+            },
+            {
+              "paramType": "path",
+              "name": "id",
+              "type": "integer",
+              "description": "Card Id",
+              "required": true
+            }
+          ],
+          "responseMessages": [
+            {
+              "code": 401,
+              "responseModel": null,
+              "message": "Unauthorized"
+            },
+            {
+              "code": 404,
+              "responseModel": null,
+              "message": "Not Found"
+            }
+          ],
+          "method": "delete",
+          "nickname": "Api::V2::Cards#destroy"
+        }
+      ]
+    },
+    {
+      "path": "api/v2/organizations/{organization_id}/cards/{id}/image",
+      "operations": [
+        {
+          "summary": "Upload images associated with a Card item",
+          "parameters": [
+            {
+              "paramType": "path",
+              "name": "organization_id",
+              "type": "string",
+              "description": "Organization ID",
+              "required": true
+            },
+            {
+              "paramType": "path",
+              "name": "id",
+              "type": "integer",
+              "description": "Card Id",
+              "required": true
+            },
+            {
+              "paramType": "form",
+              "name": "card[token]",
+              "type": "string",
+              "description": "Token",
+              "required": true
+            },
+            {
+              "paramType": "body",
+              "name": "card[file]",
+              "type": "file",
+              "description": "Image",
+              "required": true
+            }
+          ],
+          "responseMessages": [
+            {
+              "code": 400,
+              "responseModel": null,
+              "message": "Bad Request"
+            },
+            {
+              "code": 401,
+              "responseModel": null,
+              "message": "Unauthorized"
+            },
+            {
+              "code": 404,
+              "responseModel": null,
+              "message": "Not Found"
+            }
+          ],
+          "method": "post",
+          "nickname": "Api::V2::Cards#image"
+        }
+      ]
+    },
+    {
+      "path": "api/v2/organizations/{organization_id}/cards/{id}/preview",
+      "operations": [
+        {
+          "summary": "Preview the Card item",
+          "parameters": [
+            {
+              "paramType": "path",
+              "name": "organization_id",
+              "type": "string",
+              "description": "Organization ID",
+              "required": true
+            },
+            {
+              "paramType": "path",
+              "name": "id",
+              "type": "integer",
+              "description": "Card Id",
+              "required": true
+            }
+          ],
+          "responseMessages": [
+            {
+              "code": 401,
+              "responseModel": null,
+              "message": "Unauthorized"
+            },
+            {
+              "code": 404,
+              "responseModel": null,
+              "message": "Not Found"
+            }
+          ],
+          "method": "get",
+          "nickname": "Api::V2::Cards#preview"
+        }
+      ]
+    }
+  ]
+}

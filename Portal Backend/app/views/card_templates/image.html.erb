@@ -1,0 +1,83 @@
+<% if @is_preview.eql?0 %>
+	<script src="/studio/js/jquery.fontavailable-1.1.min.js"></script>
+	<%= javascript_tag "var json_fonts = #{@card_template.used_fonts(@side).to_json}" %>
+<% end %>
+<%= javascript_tag "var card_template_json = #{@card_template.image(@user_data_id, @side).to_json}" %>
+
+<div id="card_image" style="display:none">
+	<canvas id="c"></canvas>
+</div>
+<div id="imageReady" style="display:none"></div>
+<div id="cardTemplateBase64Data" style="display:none"></div>
+<script>
+	var canvas;
+	var canvasWidth = <%= @card_template.width %>
+	var canvasHeight = <%= @card_template.height %>;
+	var isPreview = <%= @is_preview %>;
+	if( isPreview ) {
+		canvasWidth += 1;
+		canvasHeight += 1;
+	}
+	function showCanvas(canvas, side, isPreview) {
+		if (isPreview) {
+			if( canvas.backgroundImage != null ) {
+				canvas.backgroundImage.stroke = '#bbb';
+			}
+			canvas.renderAll();
+			// $("#c").css("border", "2px solid #bbb");
+			// $("#cardTemplateBase64Data").html(canvas.toDataURL());
+			$("#imageReady").html("isReady");
+		}
+		else {
+			canvas.renderAll();
+			var imageMultiplier = <%= @card_template.image_multiplier %>;
+			var imageQuality = <%= @card_template.image_quality %>;
+			$("#cardTemplateBase64Data").html(canvas.toDataURLWithMultiplier('jpg', imageMultiplier, imageQuality));
+			$("#imageReady").html("isReady");
+		}
+		$("#card_image").show();
+	}
+	$(document).ready(function() {
+		if( !isPreview ) {
+			updateFonts(json_fonts);
+		}
+    canvas = new fabric.Canvas('c');
+
+    canvas.setHeight(canvasHeight);
+    canvas.setWidth(canvasWidth);
+
+		canvas.on('object:added', function(options){
+	      onObjectAdded(options);
+	  });
+
+		var canvas_json = card_template_json;
+		if( canvas_json == "" ) {
+			canvas_json = '{"objects":[],"background":"","backgroundImage":{"type":"image","originX":"left","originY":"top","left":0,"top":0,"width":'+canvasWidth+',"height":'+canvasHeight+',"fill":"rgb(0,0,0)","stroke":null,"strokeWidth":1,"strokeDashArray":null,"strokeLineCap":"butt","strokeLineJoin":"miter","strokeMiterLimit":10,"scaleX":1,"scaleY":1,"angle":0,"flipX":false,"flipY":false,"opacity":1,"shadow":null,"visible":true,"clipTo":null,"backgroundColor":"","fillRule":"nonzero","globalCompositeOperation":"source-over","src":"data:image/gif;base64,R0lGODlhAQABAPAAAP///////yH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==","filters":[],"crossOrigin":"","alignX":"none","alignY":"none","meetOrSlice":"meet"}}';
+		}
+
+		var json = JSON.parse(canvas_json);
+	  var templateToLoad = prepareTemplateForLoading(json);
+	  canvas.loadFromJSON(templateToLoad, function(){
+			showSlotPunchMagStripe(canvas, false);
+			showCanvas(canvas, '<%= @side %>', isPreview);
+		}, function(o, object) {
+			if (object && object.filters && object.filters.length) {
+				object.applyFilters(function() {
+					canvas.renderAll();
+				});
+			}
+		});
+		// TODO (HR): clean these comments after a cycle of stable operation
+		// timeout = 5000;
+		// if(isPreview) {
+		// 	timeout = 1000;
+		// }
+		// setTimeout(function(){
+		// 	// canvas.renderAll();
+		// 	// updateAlignOfAllObjects(canvas);
+		// 	// resizeAllTextObjects(canvas);
+		// 	// showSlotPunchMagStripe(canvas, false);
+		// 	// showCanvas(canvas, '<%= @side %>', isPreview);
+		// }, timeout);
+	});
+</script>

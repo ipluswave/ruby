@@ -1,0 +1,495 @@
+
+---
+list_users:
+  columns:
+  - id
+  - print_job_id
+  - created_at
+  - updated_at
+  records: 
+  - - '1'
+    - '23'
+    - '2015-05-12 02:57:05.996439'
+    - '2015-05-12 02:57:05.996439'
+  - - '2'
+    - '24'
+    - '2015-05-14 15:44:18.197748'
+    - '2015-05-14 15:44:18.197748'
+
+---
+organizations:
+  columns:
+  - id
+  - name
+  - address
+  - legacy_id
+  - balance
+  - created_at
+  - updated_at
+  records: 
+  - - '1'
+    - Test
+    - Test
+    - 
+    - '1'
+    - '2015-03-14 19:21:58.028663'
+    - '2015-03-14 19:21:58.028663'
+  - - '2'
+    - Company 1
+    - Address 1
+    - 
+    - '1'
+    - '2015-05-05 15:28:01.847702'
+    - '2015-05-05 15:28:01.847702'
+
+---
+user_data:
+  columns:
+  - id
+  - list_user_id
+  - users_id
+  - data
+  - created_at
+  - updated_at
+  records: 
+  - - '1'
+    - '1'
+    - 
+    - "[]"
+    - '2015-05-12 02:57:05.999048'
+    - '2015-05-12 02:57:05.999048'
+  - - '2'
+    - '1'
+    - 
+    - '{"name":"Helio","image":"http://localhost:3000/fabric/img/photo.jpg"}'
+    - '2015-05-12 03:21:13.140375'
+    - '2015-05-12 03:21:13.140375'
+  - - '3'
+    - '1'
+    - 
+    - '{"name":"Helio2","image":"http://localhost:3000/fabric/img/photo2.jpg"}'
+    - '2015-05-12 03:22:27.539837'
+    - '2015-05-12 03:22:27.539837'
+  - - '4'
+    - '2'
+    - 
+    - '{"name":"David","occupation":"Owner","image":"http://localhost:3000/fabric/img/photo2.jpg"}'
+    - '2015-05-14 15:44:18.201673'
+    - '2015-05-14 15:44:18.201673'
+  - - '5'
+    - '2'
+    - 
+    - '{"name":"Helio","occupation":"Engineer","image":"http://localhost:3000/fabric/img/photo.jpg"}'
+    - '2015-05-14 15:44:18.21085'
+    - '2015-05-14 15:44:18.21085'
+
+---
+costs:
+  columns:
+  - id
+  - value
+  - quantity
+  - created_at
+  - updated_at
+  - costable_id
+  - costable_type
+  - organization_id
+  records: 
+  - - '1'
+    - '10'
+    - '1'
+    - '2015-03-14 19:22:17.388359'
+    - '2015-03-14 19:22:17.388359'
+    - 
+    - 
+    - 
+  - - '2'
+    - '10'
+    - '10'
+    - '2015-04-01 21:02:37.205585'
+    - '2015-04-01 21:02:37.205585'
+    - 
+    - 
+    - '1'
+  - - '3'
+    - '1'
+    - '1'
+    - '2015-04-01 21:05:06.444356'
+    - '2015-04-01 21:05:06.444356'
+    - 
+    - 
+    - '1'
+  - - '4'
+    - '1'
+    - '1'
+    - '2015-04-01 21:07:41.053654'
+    - '2015-04-01 21:07:41.053654'
+    - 
+    - 
+    - '1'
+  - - '5'
+    - '1'
+    - '1'
+    - '2015-04-01 21:20:14.372794'
+    - '2015-04-01 21:20:14.372794'
+    - 
+    - 
+    - 
+  - - '6'
+    - '1'
+    - '1'
+    - '2015-04-01 21:21:19.722863'
+    - '2015-04-01 21:21:19.722863'
+    - 
+    - 
+    - 
+  - - '7'
+    - '1'
+    - '1'
+    - '2015-04-01 21:23:32.032907'
+    - '2015-04-01 21:23:32.032907'
+    - '1'
+    - CardType
+    - 
+  - - '8'
+    - '1'
+    - '1'
+    - '2015-04-01 21:28:19.285473'
+    - '2015-04-01 22:30:13.511946'
+    - '1'
+    - CardType
+    - '1'
+  - - '9'
+    - '1'
+    - '1'
+    - '2015-04-01 22:33:10.895656'
+    - '2015-04-01 22:33:10.895656'
+    - '2'
+    - CardType
+    - '1'
+
+---
+shipping_providers:
+  columns:
+  - id
+  - name
+  - created_at
+  - updated_at
+  records: 
+  - - '1'
+    - USPS
+    - '2015-04-01 19:23:36.946583'
+    - '2015-04-01 19:23:36.946583'
+  - - '2'
+    - FEDEX
+    - '2015-04-01 19:25:14.028329'
+    - '2015-04-01 19:25:14.028329'
+  - - '3'
+    - UPS
+    - '2015-04-01 19:25:23.545202'
+    - '2015-04-01 19:25:23.545202'
+
+---
+card_types:
+  columns:
+  - id
+  - type
+  - name
+  - description
+  - created_at
+  - updated_at
+  - width
+  - height
+  records: 
+  - - '1'
+    - 
+    - Single Sided
+    - Single Sided
+    - '2015-03-14 19:22:33.215951'
+    - '2015-03-14 19:22:33.215951'
+    - '0'
+    - '0'
+  - - '2'
+    - 
+    - Double Sided
+    - Double Sided
+    - '2015-04-01 21:27:47.015'
+    - '2015-04-01 21:27:47.015'
+    - '0'
+    - '0'
+
+---
+sites:
+  columns:
+  - id
+  - name
+  - created_at
+  - updated_at
+  records: 
+  - - '1'
+    - Rockville Office
+    - '2015-05-08 21:01:40.09603'
+    - '2015-05-08 21:01:40.09603'
+
+---
+users:
+  columns:
+  - id
+  - email
+  - encrypted_password
+  - reset_password_token
+  - reset_password_sent_at
+  - remember_created_at
+  - sign_in_count
+  - current_sign_in_at
+  - last_sign_in_at
+  - current_sign_in_ip
+  - last_sign_in_ip
+  - created_at
+  - updated_at
+  records: 
+  - - '1'
+    - admin@instantcard.net
+    - "$2a$10$GdmNT8JQ2P7LEHnv9s7dTeVAHxh1uwZT/OGQ9mA4wOFloXDCnHa/m"
+    - 
+    - 
+    - 
+    - '8'
+    - '2015-05-08 21:01:08.523642'
+    - '2015-05-05 15:57:30.301285'
+    - "::1"
+    - "::1"
+    - '2015-03-12 01:36:25.549907'
+    - '2015-05-08 21:01:08.526777'
+  - - '2'
+    - test@test.com
+    - "$2a$10$ECd4qzkMlximNMNVXgPHie/4njiqAY/CrFKoRpcRscIweLRhmF0Hm"
+    - 
+    - 
+    - 
+    - '1'
+    - '2015-05-05 15:33:36.769955'
+    - '2015-05-05 15:33:36.769955'
+    - "::1"
+    - "::1"
+    - '2015-05-05 15:32:58.832992'
+    - '2015-05-05 15:33:36.772311'
+  - - '3'
+    - t@t.com
+    - "$2a$10$OlEkA2aeu.gNC8yphvwf6u83PRaOYJgBnPizJeZhZFTtQ1ASW.9g2"
+    - 
+    - 
+    - 
+    - '0'
+    - 
+    - 
+    - 
+    - 
+    - '2015-05-05 15:58:18.507354'
+    - '2015-05-05 15:58:18.507354'
+  - - '4'
+    - t3@t.com
+    - "$2a$10$7dmGWCBSB6eShqkumoxkKefy7N9W4cRmkIJ5m/gvIjAKc6gs0fc22"
+    - 
+    - 
+    - 
+    - '0'
+    - 
+    - 
+    - 
+    - 
+    - '2015-05-05 17:17:34.508967'
+    - '2015-05-05 17:17:34.508967'
+
+---
+workstations:
+  columns:
+  - id
+  - name
+  - site_id
+  - created_at
+  - updated_at
+  records: 
+  - - '1'
+    - Alfa
+    - '1'
+    - '2015-05-08 21:16:34.480987'
+    - '2015-05-08 21:16:34.480987'
+
+---
+card_templates:
+  columns:
+  - id
+  - name
+  - created_at
+  - updated_at
+  - organization_id
+  - card_type_id
+  - data
+  - options
+  records: 
+  - - '1'
+    - tst
+    - '2015-03-14 19:22:49.797819'
+    - '2015-05-14 13:18:48.287134'
+    - '1'
+    - '1'
+    - '{"objects":[{"type":"i-text","originX":"left","originY":"top","left":72,"top":150,"width":138.4,"height":39,"fill":"rgb(0,0,0)","stroke":null,"strokeWidth":1,"strokeDashArray":null,"strokeLineCap":"butt","strokeLineJoin":"miter","strokeMiterLimit":10,"scaleX":1,"scaleY":1,"angle":0,"flipX":false,"flipY":false,"opacity":1,"shadow":null,"visible":true,"clipTo":null,"backgroundColor":"","fillRule":"nonzero","globalCompositeOperation":"source-over","text":"{{name}}","fontSize":30,"fontWeight":"bold","fontFamily":"Arial","fontStyle":"","lineHeight":1.3,"textDecoration":"","textAlign":"left","path":null,"textBackgroundColor":"","useNative":true,"styles":{}},{"type":"i-text","originX":"left","originY":"top","left":70,"top":200,"width":140.06,"height":23.4,"fill":"rgb(0,0,0)","stroke":null,"strokeWidth":1,"strokeDashArray":null,"strokeLineCap":"butt","strokeLineJoin":"miter","strokeMiterLimit":10,"scaleX":1,"scaleY":1,"angle":0,"flipX":false,"flipY":false,"opacity":1,"shadow":null,"visible":true,"clipTo":null,"backgroundColor":"","fillRule":"nonzero","globalCompositeOperation":"source-over","text":"Registered
+      Nurse","fontSize":18,"fontWeight":"normal","fontFamily":"Arial","fontStyle":"","lineHeight":1.3,"textDecoration":"","textAlign":"left","path":null,"textBackgroundColor":"","useNative":true,"styles":{}},{"type":"i-text","originX":"left","originY":"top","left":72,"top":230,"width":132.05,"height":23.4,"fill":"rgb(0,0,0)","stroke":null,"strokeWidth":1,"strokeDashArray":null,"strokeLineCap":"butt","strokeLineJoin":"miter","strokeMiterLimit":10,"scaleX":1,"scaleY":1,"angle":0,"flipX":false,"flipY":false,"opacity":1,"shadow":null,"visible":true,"clipTo":null,"backgroundColor":"","fillRule":"nonzero","globalCompositeOperation":"source-over","text":"Facility
+      Manager","fontSize":18,"fontWeight":"normal","fontFamily":"Arial","fontStyle":"italic","lineHeight":1.3,"textDecoration":"","textAlign":"left","path":null,"textBackgroundColor":"","useNative":true,"styles":{}},{"type":"image","originX":"left","originY":"top","left":300,"top":110,"width":128,"height":155,"fill":"rgb(0,0,0)","stroke":null,"strokeWidth":1,"strokeDashArray":null,"strokeLineCap":"butt","strokeLineJoin":"miter","strokeMiterLimit":10,"scaleX":1,"scaleY":1,"angle":0,"flipX":false,"flipY":false,"opacity":1,"shadow":null,"visible":true,"clipTo":null,"backgroundColor":"","fillRule":"nonzero","globalCompositeOperation":"source-over","src":"{{image}}","filters":[],"crossOrigin":"","alignX":"none","alignY":"none","meetOrSlice":"meet"},{"type":"image","originX":"left","originY":"top","left":10,"top":5,"width":124,"height":97,"fill":"rgb(0,0,0)","stroke":null,"strokeWidth":1,"strokeDashArray":null,"strokeLineCap":"butt","strokeLineJoin":"miter","strokeMiterLimit":10,"scaleX":1,"scaleY":1,"angle":0,"flipX":false,"flipY":false,"opacity":1,"shadow":null,"visible":true,"clipTo":null,"backgroundColor":"","fillRule":"nonzero","globalCompositeOperation":"source-over","src":"/fabric/img/logo.jpg","filters":[],"crossOrigin":"","alignX":"none","alignY":"none","meetOrSlice":"meet"}],"background":"","backgroundImage":{"type":"image","originX":"left","originY":"top","left":0,"top":0,"width":457,"height":288,"fill":"rgb(0,0,0)","stroke":null,"strokeWidth":1,"strokeDashArray":null,"strokeLineCap":"butt","strokeLineJoin":"miter","strokeMiterLimit":10,"scaleX":1,"scaleY":1,"angle":0,"flipX":false,"flipY":false,"opacity":1,"shadow":null,"visible":true,"clipTo":null,"backgroundColor":"","fillRule":"nonzero","globalCompositeOperation":"source-over","src":"/fabric/img/bg.jpg","filters":[],"crossOrigin":"","alignX":"none","alignY":"none","meetOrSlice":"meet"}}'
+    - "[]"
+  - - '11'
+    - 'Card Template #2'
+    - '2015-05-14 15:39:58.225031'
+    - '2015-05-14 15:45:17.80588'
+    - '1'
+    - '1'
+    - '{"objects":[{"type":"i-text","originX":"left","originY":"top","left":72,"top":150,"width":138.4,"height":39,"fill":"rgb(0,0,0)","stroke":null,"strokeWidth":1,"strokeDashArray":null,"strokeLineCap":"butt","strokeLineJoin":"miter","strokeMiterLimit":10,"scaleX":1,"scaleY":1,"angle":0,"flipX":false,"flipY":false,"opacity":1,"shadow":null,"visible":true,"clipTo":null,"backgroundColor":"","fillRule":"nonzero","globalCompositeOperation":"source-over","text":"{{name}}","fontSize":30,"fontWeight":"bold","fontFamily":"Arial","fontStyle":"","lineHeight":1.3,"textDecoration":"","textAlign":"left","path":null,"textBackgroundColor":"","useNative":true,"styles":{}},{"type":"i-text","originX":"left","originY":"top","left":70,"top":200,"width":140.06,"height":23.4,"fill":"rgb(0,0,0)","stroke":null,"strokeWidth":1,"strokeDashArray":null,"strokeLineCap":"butt","strokeLineJoin":"miter","strokeMiterLimit":10,"scaleX":1,"scaleY":1,"angle":0,"flipX":false,"flipY":false,"opacity":1,"shadow":null,"visible":true,"clipTo":null,"backgroundColor":"","fillRule":"nonzero","globalCompositeOperation":"source-over","text":"{{occupation}}","fontSize":18,"fontWeight":"normal","fontFamily":"Arial","fontStyle":"","lineHeight":1.3,"textDecoration":"","textAlign":"left","path":null,"textBackgroundColor":"","useNative":true,"styles":{}},{"type":"i-text","originX":"left","originY":"top","left":72,"top":230,"width":132.05,"height":23.4,"fill":"rgb(0,0,0)","stroke":null,"strokeWidth":1,"strokeDashArray":null,"strokeLineCap":"butt","strokeLineJoin":"miter","strokeMiterLimit":10,"scaleX":1,"scaleY":1,"angle":0,"flipX":false,"flipY":false,"opacity":1,"shadow":null,"visible":true,"clipTo":null,"backgroundColor":"","fillRule":"nonzero","globalCompositeOperation":"source-over","text":"Facility
+      Manager","fontSize":18,"fontWeight":"normal","fontFamily":"Arial","fontStyle":"italic","lineHeight":1.3,"textDecoration":"","textAlign":"left","path":null,"textBackgroundColor":"","useNative":true,"styles":{}},{"type":"image","originX":"left","originY":"top","left":300,"top":110,"width":128,"height":155,"fill":"rgb(0,0,0)","stroke":null,"strokeWidth":1,"strokeDashArray":null,"strokeLineCap":"butt","strokeLineJoin":"miter","strokeMiterLimit":10,"scaleX":1,"scaleY":1,"angle":0,"flipX":false,"flipY":false,"opacity":1,"shadow":null,"visible":true,"clipTo":null,"backgroundColor":"","fillRule":"nonzero","globalCompositeOperation":"source-over","src":"{{image}}","filters":[],"crossOrigin":"","alignX":"none","alignY":"none","meetOrSlice":"meet"},{"type":"image","originX":"left","originY":"top","left":10,"top":5,"width":124,"height":97,"fill":"rgb(0,0,0)","stroke":null,"strokeWidth":1,"strokeDashArray":null,"strokeLineCap":"butt","strokeLineJoin":"miter","strokeMiterLimit":10,"scaleX":1,"scaleY":1,"angle":0,"flipX":false,"flipY":false,"opacity":1,"shadow":null,"visible":true,"clipTo":null,"backgroundColor":"","fillRule":"nonzero","globalCompositeOperation":"source-over","src":"/fabric/img/logo.jpg","filters":[],"crossOrigin":"","alignX":"none","alignY":"none","meetOrSlice":"meet"}],"background":"","backgroundImage":{"type":"image","originX":"left","originY":"top","left":0,"top":0,"width":457,"height":288,"fill":"rgb(0,0,0)","stroke":null,"strokeWidth":1,"strokeDashArray":null,"strokeLineCap":"butt","strokeLineJoin":"miter","strokeMiterLimit":10,"scaleX":1,"scaleY":1,"angle":0,"flipX":false,"flipY":false,"opacity":1,"shadow":null,"visible":true,"clipTo":null,"backgroundColor":"","fillRule":"nonzero","globalCompositeOperation":"source-over","src":"/fabric/img/bg.jpg","filters":[],"crossOrigin":"","alignX":"none","alignY":"none","meetOrSlice":"meet"}}'
+    - "[]"
+
+---
+print_jobs:
+  columns:
+  - id
+  - card_template_id
+  - created_at
+  - updated_at
+  - status_cd
+  records: 
+  - - '23'
+    - '1'
+    - '2015-05-12 02:55:53.140801'
+    - '2015-05-13 04:23:01.128394'
+    - '2'
+  - - '24'
+    - '11'
+    - '2015-05-14 15:44:18.192247'
+    - '2015-05-14 15:48:14.29715'
+    - '2'
+
+---
+images:
+  columns:
+  - id
+  - file
+  - imageable_id
+  - imageable_type
+  - created_at
+  - updated_at
+  records: 
+  - - '1'
+    - card-14.png
+    - 
+    - 
+    - '2015-04-30 17:44:28.149258'
+    - '2015-04-30 17:44:28.149258'
+  - - '2'
+    - card-14.png
+    - '1'
+    - CardTemplate
+    - '2015-04-30 17:53:12.572905'
+    - '2015-04-30 17:53:12.572905'
+  - - '3'
+    - card-14.png
+    - '1'
+    - CardTemplate
+    - '2015-04-30 18:01:37.722062'
+    - '2015-04-30 18:01:37.722062'
+  - - '4'
+    - card-14.png
+    - '1'
+    - CardTemplate
+    - '2015-04-30 18:37:33.499'
+    - '2015-04-30 18:37:33.499'
+  - - '5'
+    - card-14.png
+    - '1'
+    - CardTemplate
+    - '2015-04-30 18:38:44.851622'
+    - '2015-04-30 18:38:44.851622'
+  - - '6'
+    - card-14.png
+    - '4'
+    - CardTemplate
+    - '2015-04-30 18:40:07.955133'
+    - '2015-04-30 18:40:07.955133'
+  - - '7'
+    - card-14.png
+    - '3'
+    - CardTemplate
+    - '2015-04-30 18:42:17.658957'
+    - '2015-04-30 18:42:17.658957'
+  - - '8'
+    - card-14.png
+    - '5'
+    - CardTemplate
+    - '2015-04-30 18:44:43.851167'
+    - '2015-04-30 18:44:43.851167'
+
+---
+roles:
+  columns:
+  - id
+  - name
+  - resource_id
+  - resource_type
+  - created_at
+  - updated_at
+  records: 
+  - - '8'
+    - master
+    - 
+    - 
+    - '2015-05-08 20:58:16.498839'
+    - '2015-05-08 20:58:16.498839'
+  - - '9'
+    - admin
+    - 
+    - 
+    - '2015-05-08 20:58:16.52502'
+    - '2015-05-08 20:58:16.52502'
+  - - '10'
+    - verifier
+    - 
+    - 
+    - '2015-05-08 20:58:16.527625'
+    - '2015-05-08 20:58:16.527625'
+  - - '11'
+    - individual
+    - 
+    - 
+    - '2015-05-08 20:58:16.530133'
+    - '2015-05-08 20:58:16.530133'
+  - - '12'
+    - staff
+    - 
+    - 
+    - '2015-05-08 20:59:27.445647'
+    - '2015-05-08 20:59:27.445647'
+
+---
+users_roles:
+  columns:
+  - user_id
+  - role_id
+  records: 
+  - - '1'
+    - '8'
+
+---
+printers:
+  columns:
+  - id
+  - name
+  - card_type_id
+  - workstation_id
+  - created_at
+  - updated_at
+  records: 
+  - - '1'
+    - Fargo-B
+    - 
+    - '1'
+    - '2015-05-08 21:20:16.802513'
+    - '2015-05-08 21:28:26.342614'

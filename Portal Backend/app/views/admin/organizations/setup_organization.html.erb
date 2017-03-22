@@ -1,0 +1,54 @@
+<%= semantic_form_for @organization, :url => setup_organization_admin_organizations_path do |f| %>
+    <%= f.semantic_errors *f.object.errors.keys %>
+    <%= f.inputs 'Organization', :class => 'inputs organization-add-form step-1' do %>
+        <%= f.input :name %>
+        <%= f.input :parent_organization %>
+        <%= f.input :industry %>
+        <%= f.input :category %>
+        <%= f.input :overdraft, :as => :string %>
+    <% end %>
+    <%= f.inputs 'Address', :class => 'inputs organization-add-form step-2' do %>
+        <% unless f.object.errors.any? %>
+            <% f.object.addresses.build %>
+        <% end %>
+        <%= f.fields_for :addresses do |address| %>
+            <%= address.input :label %>
+            <%= address.input :primary, :label => "Primary address?", :as => :boolean, :input_html => { :checked => 'checked' }, :wrapper_html => { :style => 'min-height: 40px;' } %>
+            <%= address.input :address1 %>
+            <%= address.input :address2 %>
+            <%= address.input :city %>
+            <%= address.input :state %>
+            <%= address.input :zip_code %>
+            <%= address.input :country, priority_countries: ["US", "Canada"] %>
+        <% end %>
+    <% end %>
+    <%= f.inputs 'Contact', :class => 'inputs organization-add-form step-3' do %>
+        <% unless f.object.errors.any? %>
+            <% f.object.contacts.build %>
+        <% end %>
+        <%= f.fields_for :contacts do |contact| %>
+            <%= contact.input :full_name %>
+            <%= contact.input :email %>
+            <%= contact.input :alt_email %>
+            <%= contact.input :phone_number %>
+            <%= contact.input :alt_phone_number %>
+            <%= contact.input :fax_number %>
+        <% end %>
+    <% end %>
+    <%= f.inputs 'User', :class => 'inputs organization-add-form step-4' do %>
+        <% unless f.object.errors.any? %>
+            <% f.object.users.build %>
+        <% end %>
+        <%= f.fields_for :users do |user| %>
+            <%= user.input :email %>
+            <%= user.input :pin %>
+            <%= user.input :roles, :as => :check_boxes, :collection => Role.where("name in ('master', 'operator', 'admin')") %>
+        <% end %>
+    <% end %>
+    <%= f.actions do %>
+        <%= f.action :cancel, label: 'Prev', :wrapper_html => {:class => 'organization-add-prev cancel'} %>
+        <%= f.action :cancel, label: 'Next', :wrapper_html => {:class => 'organization-add-next cancel'} %>
+        <%= f.action :submit, label: 'Finish', :wrapper_html => {:class => 'organization-add-save'} %>
+        <%= f.action :cancel, label: 'Cancel', :wrapper_html => {:class => 'cancel'} %>
+    <% end %>
+<% end %>

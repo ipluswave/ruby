@@ -1,0 +1,27 @@
+<% if print_job.workstation_warning? && print_job.Scheduled? %>
+  <div class="modal fade" id="workstation_warning_modal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header alert alert-warning">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Check Card on the printer: <%= print_job.workstation.name %></h4>
+        </div>
+        <div class="modal-body">
+          <p>It is required to change the card type on <span class='badge alert-warning'><%= print_job.workstation.name %></span></p>
+          <p>Put <%= print_job.total_cards %> <%= "card".pluralize(print_job.total_cards) %> of type <span class="badge"><%= print_job.card_type.name %></span></p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  <script>
+    $(document).ready(function() {
+      $("#workstation_warning_modal").modal();
+    });
+  </script>
+<% end %>

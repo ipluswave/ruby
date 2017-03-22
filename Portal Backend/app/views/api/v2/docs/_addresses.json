@@ -1,0 +1,353 @@
+{
+  "apiVersion": "2.0",
+  "swaggerVersion": "1.2",
+  "basePath": "/",
+  "resourcePath": "addresses",
+  "apis": [
+    {
+      "path": "api/v2/organizations/{organization_id}/addresses",
+      "operations": [
+        {
+          "summary": "Fetches all Address items",
+          "parameters": [
+            {
+              "paramType": "path",
+              "name": "organization_id",
+              "type": "string",
+              "description": "Organization ID",
+              "required": true
+            },
+            {
+              "paramType": "query",
+              "name": "page",
+              "type": "integer",
+              "description": "Page number",
+              "required": false
+            },
+            {
+              "paramType": "query",
+              "name": "page_size",
+              "type": "integer",
+              "description": "Page size",
+              "required": false
+            }
+          ],
+          "responseMessages": [
+            {
+              "code": 401,
+              "responseModel": null,
+              "message": "Unauthorized"
+            },
+            {
+              "code": 406,
+              "responseModel": null,
+              "message": "Not Acceptable"
+            },
+            {
+              "code": 500,
+              "responseModel": null,
+              "message": "Requested Range Not Satisfiable"
+            }
+          ],
+          "method": "get",
+          "nickname": "Api::V2::Addresses#index"
+        }
+      ]
+    },
+    {
+      "path": "api/v2/organizations/{organization_id}/addresses",
+      "operations": [
+        {
+          "summary": "Creates a new Address",
+          "parameters": [
+            {
+              "paramType": "path",
+              "name": "organization_id",
+              "type": "string",
+              "description": "Organization ID",
+              "required": true
+            },
+            {
+              "paramType": "form",
+              "name": "address[contact_id]",
+              "type": "string",
+              "description": "Contact ID",
+              "required": false
+            },
+            {
+              "paramType": "form",
+              "name": "address[label]",
+              "type": "string",
+              "description": "Label",
+              "required": false
+            },
+            {
+              "paramType": "form",
+              "name": "address[primary]",
+              "type": "string",
+              "description": "Primary",
+              "required": true,
+              "allowableValues": {
+                "valueType": "LIST",
+                "values": [
+                  "true",
+                  "false"
+                ]
+              }
+            },
+            {
+              "paramType": "form",
+              "name": "address[address1]",
+              "type": "string",
+              "description": "Address1",
+              "required": true
+            },
+            {
+              "paramType": "form",
+              "name": "address[address2]",
+              "type": "string",
+              "description": "Address2",
+              "required": false
+            },
+            {
+              "paramType": "form",
+              "name": "address[city]",
+              "type": "string",
+              "description": "City",
+              "required": true
+            },
+            {
+              "paramType": "form",
+              "name": "address[state]",
+              "type": "string",
+              "description": "State",
+              "required": true
+            },
+            {
+              "paramType": "form",
+              "name": "address[zip_code]",
+              "type": "string",
+              "description": "Zip code",
+              "required": true
+            },
+            {
+              "paramType": "form",
+              "name": "address[country]",
+              "type": "string",
+              "description": "Country Code",
+              "required": true
+            }
+          ],
+          "responseMessages": [
+            {
+              "code": 401,
+              "responseModel": null,
+              "message": "Unauthorized"
+            },
+            {
+              "code": 406,
+              "responseModel": null,
+              "message": "Not Acceptable"
+            }
+          ],
+          "method": "post",
+          "nickname": "Api::V2::Addresses#create"
+        }
+      ]
+    },
+    {
+      "path": "api/v2/organizations/{organization_id}/addresses/{id}",
+      "operations": [
+        {
+          "summary": "Fetches a single Address item",
+          "parameters": [
+            {
+              "paramType": "path",
+              "name": "organization_id",
+              "type": "string",
+              "description": "Organization ID",
+              "required": true
+            },
+            {
+              "paramType": "path",
+              "name": "id",
+              "type": "integer",
+              "description": "Address ID",
+              "required": true
+            }
+          ],
+          "responseMessages": [
+            {
+              "code": 401,
+              "responseModel": null,
+              "message": "Unauthorized"
+            },
+            {
+              "code": 404,
+              "responseModel": null,
+              "message": "Not Found"
+            },
+            {
+              "code": 406,
+              "responseModel": null,
+              "message": "Not Acceptable"
+            }
+          ],
+          "method": "get",
+          "nickname": "Api::V2::Addresses#show"
+        }
+      ]
+    },
+    {
+      "path": "api/v2/organizations/{organization_id}/addresses/{id}",
+      "operations": [
+        {
+          "summary": "Updates an existing Address",
+          "parameters": [
+            {
+              "paramType": "path",
+              "name": "organization_id",
+              "type": "string",
+              "description": "Organization ID",
+              "required": true
+            },
+            {
+              "paramType": "path",
+              "name": "id",
+              "type": "integer",
+              "description": "Address ID",
+              "required": true
+            },
+            {
+              "paramType": "form",
+              "name": "address[contact_id]",
+              "type": "string",
+              "description": "Contact ID",
+              "required": false
+            },
+            {
+              "paramType": "form",
+              "name": "address[label]",
+              "type": "string",
+              "description": "Label",
+              "required": false
+            },
+            {
+              "paramType": "form",
+              "name": "address[primary]",
+              "type": "string",
+              "description": "Primary",
+              "required": false,
+              "allowableValues": {
+                "valueType": "LIST",
+                "values": [
+                  "true",
+                  "false"
+                ]
+              }
+            },
+            {
+              "paramType": "form",
+              "name": "address[address1]",
+              "type": "string",
+              "description": "Address1",
+              "required": false
+            },
+            {
+              "paramType": "form",
+              "name": "address[address2]",
+              "type": "string",
+              "description": "Address2",
+              "required": false
+            },
+            {
+              "paramType": "form",
+              "name": "address[city]",
+              "type": "string",
+              "description": "City",
+              "required": false
+            },
+            {
+              "paramType": "form",
+              "name": "address[state]",
+              "type": "string",
+              "description": "State",
+              "required": false
+            },
+            {
+              "paramType": "form",
+              "name": "address[zip_code]",
+              "type": "string",
+              "description": "Zip code",
+              "required": false
+            },
+            {
+              "paramType": "form",
+              "name": "address[country]",
+              "type": "string",
+              "description": "Country Code",
+              "required": false
+            }
+          ],
+          "responseMessages": [
+            {
+              "code": 401,
+              "responseModel": null,
+              "message": "Unauthorized"
+            },
+            {
+              "code": 404,
+              "responseModel": null,
+              "message": "Not Found"
+            },
+            {
+              "code": 406,
+              "responseModel": null,
+              "message": "Not Acceptable"
+            }
+          ],
+          "method": "patch",
+          "nickname": "Api::V2::Addresses#update"
+        }
+      ]
+    },
+    {
+      "path": "api/v2/organizations/{organization_id}/addresses/{id}",
+      "operations": [
+        {
+          "summary": "Deletes an existing Address item",
+          "parameters": [
+            {
+              "paramType": "path",
+              "name": "organization_id",
+              "type": "string",
+              "description": "Organization ID",
+              "required": true
+            },
+            {
+              "paramType": "path",
+              "name": "id",
+              "type": "integer",
+              "description": "Address ID",
+              "required": true
+            }
+          ],
+          "responseMessages": [
+            {
+              "code": 401,
+              "responseModel": null,
+              "message": "Unauthorized"
+            },
+            {
+              "code": 404,
+              "responseModel": null,
+              "message": "Not Found"
+            }
+          ],
+          "method": "delete",
+          "nickname": "Api::V2::Addresses#destroy"
+        }
+      ]
+    }
+  ]
+}

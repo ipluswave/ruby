@@ -1,0 +1,48 @@
+
+1. List available printers:
+$ lpstat -p -d
+
+	--> -d will ask for default printer
+
+2. Print a file:
+$ lp -d printer filename
+
+	--> printer is from the list of printers listed in command #1
+	
+3. Set Default printer:
+$ lpoptions -d printer
+
+4. Print with options:
+$ lp -o landscape -o scaling=75 -o media=A4 filename.jpg
+
+5. List supported options from a priter:
+$ lpoptions -p printer -l
+
+6. Custom width and height
+$ lp -o media=Custom.WIDTHxLENGTH filename
+$ lp -o media=Custom.WIDTHxLENGTHin filename
+$ lp -o media=Custom.WIDTHxLENGTHcm filename
+$ lp -o media=Custom.WIDTHxLENGTHmm filename
+
+7. Seting Orientation
+$ lp -o landscape filename
+
+I think (TO_TEST) will print in portrait
+$ lp filename
+
+Or can use this:
+-o orientation-requested=3 - portrait orientation (no rotation)
+-o orientation-requested=4 - landscape orientation (90 degrees)
+-o orientation-requested=5 - reverse landscape or seascape orientation (270 degrees)
+-o orientation-requested=6 - reverse portrait or upside-down orientation (180 degrees)
+
+8. Single sided (default), both sides:
+$ lp -o sides=one-sided filename
+
+$ lp -o sides=two-sided-short-edge filename (suitable for landscape)
+$ lp -o sides=two-sided-long-edge filename (suitable for portrait)
+
+9. Scale to fit to the page
+$ lp -o fit-to-page filename
+
+10. lpr -P Fargo-B -o PrintBothSides=True -o SplitRibbon=True -o fit-to-page filename

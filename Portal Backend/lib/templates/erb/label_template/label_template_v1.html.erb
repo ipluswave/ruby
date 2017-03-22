@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>InstantCard Label</title>
+  <style>
+  body {
+    max-width: 100mm;
+    font-family: 'Arial';
+    font-size: 8px;
+    margin-left: 5mm;
+  }
+  .to_address {
+    font-family: 'Arial Bold';
+    font-size: 12px;
+  }
+  .first_line {
+    float: right;
+  }
+  </style>
+
+</head>
+<body>
+
+<div class='first_line'>
+  <%= @first_line %><br />
+</div>
+<%= @from_address %>
+<div class='to_address'>
+  <%= @to_address %>
+</div>
+
+</body>

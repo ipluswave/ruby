@@ -1,0 +1,1 @@
+json.extract! @me, :id, :organization_id, :email, :settings
