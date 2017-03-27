@@ -28,6 +28,7 @@ class Reports::Builder
       end
 
       active_record.group(filter["model"])
+      
       if request['aggregate']
         request['field'] ||= 'id'
         request_data = active_record.send(request['aggregate'], *request['field'])
