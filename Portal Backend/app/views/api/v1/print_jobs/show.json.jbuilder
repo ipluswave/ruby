@@ -1,1 +1,0 @@
-json.partial! 'api/v1/print_jobs/print_job', print_job: @print_job

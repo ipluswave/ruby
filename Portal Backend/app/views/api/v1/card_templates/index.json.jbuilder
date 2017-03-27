@@ -1,1 +1,0 @@
-json.array! @card_templates, partial: 'api/v1/card_templates/card_template', as: :card_template

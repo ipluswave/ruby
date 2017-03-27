@@ -1,1 +1,0 @@
-json.array! @users, :id, :organization_id, :email, :settings

@@ -1,1 +1,0 @@
-json.extract! letter, :id, :name, :created_at, :updated_at

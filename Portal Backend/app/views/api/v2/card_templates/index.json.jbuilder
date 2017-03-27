@@ -1,1 +1,0 @@
-json.array! @card_templates, :id, :name

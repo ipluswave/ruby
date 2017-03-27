@@ -1,1 +1,0 @@
-json.array! @special_handlings, partial: 'api/v1/organizations/special_handling', as: :special_handling

@@ -1,1 +1,0 @@
-json.partial! 'api/v2/addresses/address', address: @address

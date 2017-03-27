@@ -1,1 +1,0 @@
-json.extract! @user, :id, :organization_id, :email, :settings

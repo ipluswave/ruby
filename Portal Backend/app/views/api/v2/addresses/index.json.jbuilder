@@ -1,1 +1,0 @@
-json.array! @addresses, :id, :organization_id, :contact_id, :organization_name, :label, :primary, :address1, :address2, :country, :city, :state, :zip_code

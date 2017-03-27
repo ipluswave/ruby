@@ -1,1 +1,0 @@
-json.array! @fonts, partial: 'api/v1/organizations/font', as: :font

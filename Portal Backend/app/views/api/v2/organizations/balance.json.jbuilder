@@ -1,1 +1,0 @@
-json.balance humanized_money_with_symbol(@balance)

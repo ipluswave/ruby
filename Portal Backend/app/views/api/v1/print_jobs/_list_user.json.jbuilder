@@ -1,1 +1,0 @@
-json.extract list_user, :id
